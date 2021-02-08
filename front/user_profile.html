@@ -1,0 +1,191 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--<title>Sticky Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">-->
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../front/css/bootstrap/6.1%20bootstrap.min.css">
+
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body>
+
+    <div class="wrapper" id="wrapper">
+        <div class="logo-wrapper">
+            <img src="../front/images/top-logo.png" id="imgid">
+
+        </div>
+        <div class="sec-8">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="icon8"></i>
+                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+            </a>
+        </div>
+        <div class="navigation-wrapper" id="navigation">
+            <a href="#">Search Notes</a>
+            <a href="#">Sell Your Notes</a>
+            <a href="#">Buyer Requests</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#"><img src="../front/images/customer-1.png" style="height: 40px;width: 40p;margin-top: 5px;margin-left: 2px"></a>
+            <a href="#"><button type="button" style="width: 85px;margin-top:5px;margin-left: 3px">Logout</button></a>
+        </div>
+
+    </div>
+    <section class="first-section">
+
+        <h2>User Profile</h2>
+    </section>
+
+
+    <section class="admin1">
+        <h1>Basic Profile Details</h1>
+
+    </section>
+    <div class="form-group1">
+
+        <form>
+            <div class="full">
+                <div class="left">
+                    <label class="control-label required" for="username" style="margin-top: 40px">First Name</label><br>
+                    <input type="text" id="username1" name="data[username]" required="required" class="form-control" placeholder="Enter your first name" style="margin-left: 20px">
+
+
+
+                    <label class="control-label required" for="username" style="margin-top: 30px">Email</label><br>
+                    <input type="email" id="mail" name="data[username]" required="required" class="form-control" placeholder="Enter your email address" style="margin-left: 20px">
+
+
+                    <label for="gender" style="margin-top: 30px">Gender</label><br>
+                    <select id="gender" name="gender" style="margin-top: 10px;margin-left: 20px">
+                        <option value="select">Select Your Gender</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+
+
+                    <label id="pic" for="exampleInputPassword1" style="margin-top: 30px">Profile Picture</label><br>
+                    <input type="image" id="image" name="player_password" src="images/upload1.png" style="padding:5px 250px" />
+
+
+                </div>
+                <div class="right">
+                    <label class="control-label required" for="username" style="margin-top: 40px;margin-left: 2px">Last Name</label><br>
+                    <input type="text" id="username1" name="data[username]" required="required" class="form-control" placeholder="Enter your last name">
+
+
+
+                    <label for="birthday" style="margin-top: 30px;margin-left: -2px">Date of Birth</label><br>
+                    <input type="date" id="birthday" name="birthday" placeholder="Enter your date of birth" style="background-color: white"><br>
+
+
+                    <label id="pnumber" for="exampleInputPassword1" style="margin-top: 30px;margin-left: -2px">Phone Number</label><br>
+                    <select id="code" name="code" style="margin-top: 10px">
+                        <option value="91">+91</option>
+                        <option value="1">+1</option>
+                        <option value="2">+2</option>
+                        <option value="3">+3</option>
+                    </select>
+
+
+                    <input type="tel" name="player_password" id="pass_log_id4" placeholder="Enter your phone number" style="margin-top: 10px" />
+                </div>
+            </div>
+
+            <section class="admin1">
+                <h1>Address Details</h1>
+
+            </section>
+
+            <div class="full">
+                <div class="left">
+                    <label class="control-label required" for="username" style="margin-top: 40px">Address Line 1</label><br>
+                    <input type="text" id="address" name="data[username]" required="required" class="form-control" placeholder="Enter your address" style="margin-left: 20px">
+
+
+
+                    <label class="control-label required" for="username" style="margin-top: 30px">City</label><br>
+                    <input type="text" id="city" name="data[username]" required="required" class="form-control" placeholder="Enter your email city" style="margin-left: 20px">
+
+
+                    <label class="control-label required" for="gender" style="margin-top: 30px">ZipCode</label><br>
+                    <input type="number" id="zcode" name="data[username]" class="form-control" placeholder="Enter your ZipCode" style="margin-left: 20px">
+
+                </div>
+                <div class="right">
+
+                    <label class="control-label required" for="username" style="margin-top: 40px;margin-left: -2px">Address Line 2</label><br>
+                    <input type="text" id="address" name="data[username]" required="required" class="form-control" placeholder="Enter your address">
+
+
+
+                    <label class="control-label required" for="username" style="margin-top: 30px;margin-left: -2px">State</label><br>
+                    <input type="text" id="state" name="data[username]" required="required" class="form-control" placeholder="Enter your state">
+
+
+                    <label class="control-label required" id="pnumber" for="exampleInputPassword1" style="margin-top: 30px;margin-left: -2px">Country</label><br>
+                    <input type="text" name="player_password" id="country" required="required" placeholder="Enter your country">
+                </div>
+            </div>
+
+
+            <section class="admin1">
+                <h1>University and College Information</h1>
+
+            </section>
+
+            <div class="full-2">
+                <div class="top">
+                    <label for="username">University</label><br>
+                    <input type="text" id="uni" name="data[username]" class="form-control" placeholder="Enter your university" style="margin-left: 20px">
+
+
+                    <label for="username">College</label><br>
+                    <input type="text" id="college" name="data[username]" required="required" class="form-control" placeholder="Enter your college" style="margin-left: 20px">
+
+                </div>
+                <div class="bottom">
+                    <button type="submit" class="btn btn-secondary">SUBMIT</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    <hr>
+    <div class="footer">
+        <p>Copyright <i class="far fa-copyright"></i>TatvaSoft All rights reserved.</p>
+        <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="	fab fa-linkedin-in"></i>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../front/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Custom JS -->
+    <script src="../front/js/script.js"></script>
+    <script src="../front/js/nav.js"></script>
+</body>
+
+</html>

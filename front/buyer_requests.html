@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../front/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper scroll-2" id="wrapper-2">
+        <div class="logo-wrapper">
+            <img src="../front/images/logo.png" id="imgid">
+
+        </div>
+        <div class="sec-8">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="icon8"></i>
+                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+            </a>
+        </div>
+        <div class="navigation-wrapper sc-2" id="navigation">
+            <a href="#">Search Notes</a>
+            <a href="#">Sell Your Notes</a>
+            <a href="#">Buyer Requests</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#"><img src="../front/images/customer-1.png" style="height: 40px;width: 40p;margin-top: 5px;margin-left: 2px"></a>
+            <a href="#"><button type="button" style="width: 85px;margin-top:5px;margin-left: 3px">Logout</button></a>
+        </div>
+
+    </div>
+    <main>
+        <section class="first-section"></section>
+    </main>
+
+    <section class="admin">
+        <div class="content-box-md">
+            <div class="container1">
+
+                <div class="search-flex" style="margin-top: 60px;">
+                    <div>
+                        <h1>Buyer Requests</h1>
+                    </div>
+                    <div class="flex-search-buttons">
+                        <input type="text" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                        <button type="button">SEARCH</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="overflow-x: auto;">
+        <table class="main-table" border="1" width="98%">
+            <col style="width:2%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:15%">
+            <col style="width:8%">
+            <col style="width:5%">
+            <col style="width:8%">
+            <col style="width:15%">
+            <col style="width:8%">
+            <col style="width:2%">
+            <tr class="line">
+                <th>SR NO.</th>
+                <th>NOTE TITLE</th>
+                <th>CATEGORY</th>
+                <th>BUYER</th>
+                <th>PHONE NO.</th>
+                <th>SELL TYPE</th>
+                <th>PRICE</th>
+                <th>DOWNLOADED DATE/TIME</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr class="line">
+                <td>1</td>
+                <td>Data Science</td>
+                <td>Science</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Paid</td>
+                <td>$250</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>2</td>
+                <td>Accounts</td>
+                <td>Commerce</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>3</td>
+                <td>Social Studies</td>
+                <td>Social</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>4</td>
+                <td>AI</td>
+                <td>IT</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Paid</td>
+                <td>$158</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>5</td>
+                <td>Lorem Ipsum</td>
+                <td>Ipsum</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>6</td>
+                <td>Data Science</td>
+                <td>Science/td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Paid</td>
+                <td>$555</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>7</td>
+                <td>Accounts</td>
+                <td>Commerce</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>8</td>
+                <td>Social Studies</td>
+                <td>Social/td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>9</td>
+                <td>AI</td>
+                <td>IT</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Paid</td>
+                <td>$250</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr class="line">
+                <td>10</td>
+                <td>Lorem Ipsum</td>
+                <td>Ipsum</td>
+                <td>testing123@gmail.com</td>
+                <td>+91 9874563527</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td>27 November 2020, 11:24:34</td>
+                <td><img src="images/eye.png"></td>
+                <td class="more">
+                    <button id="more-btn" class="more-btn">
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span><br>
+                        <span class="more-dot"></span>
+                    </button>
+                    <div class="more-menu">
+                        <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                            <li class="more-menu-item" role="presentation">
+                                <button type="button" class="more-menu-btn" role="menuitem">Allow Download</button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="page-flex">
+
+        <nav>
+            <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <hr>
+    <div class="footer">
+        <p>Copyright <i class="far fa-copyright"></i>TatvaSoft All rights reserved.</p>
+        <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="	fab fa-linkedin-in"></i>
+        </div>
+    </div>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="../front/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Custom JS -->
+    <script src="../front/js/script.js"></script>
+    <script src="../front/js/nav.js"></script>
+
+</body>
+
+</html>
