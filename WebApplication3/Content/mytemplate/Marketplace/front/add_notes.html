@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--<title>Sticky Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">-->
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../front/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="logo-wrapper">
+            <img src="../front/images/top-logo.png" id="imgid">
+
+        </div>
+        <div class="sec-8">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="icon8"></i>
+                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+            </a>
+        </div>
+        <div class="navigation-wrapper" id="navigation">
+            <a href="#">Search Notes</a>
+            <a href="#">Sell Your Notes</a>
+            <a href="#">Buyer Requests</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#"><img src="../front/images/customer-1.png" style="height: 40px;width: 40p;margin-top: 5px;margin-left: 2px"></a>
+            <a href="#"><button type="button" style="width: 85px;margin-top:5px;margin-left: 3px">Logout</button></a>
+        </div>
+
+    </div>
+
+    <section class="first-section">
+
+        <h2>Add Notes</h2>
+    </section>
+
+    <section class="admin1">
+        <h1>Basic Note Details</h1>
+
+    </section>
+    <div class="form-group1">
+
+        <form>
+            <div class="full">
+                <div class="left">
+                    <label class="control-label required" for="title" style="margin-top: 40px">Title</label><br>
+                    <input type="text" id="title" name="data[username]" required="required" class="form-control" placeholder="Enter your notes title" style="margin-left: 20px">
+
+                    <label id="pic" for="exampleInputPassword1" style="margin-top: 30px">Display Picture</label><br>
+                    <input type="image" name="player_password" id="image" src="images/upload1.png" placeholder="Upload your note" /><br>
+
+
+                    <label for="username" style="margin-top: 40px">Type</label><br>
+                    <select id="country" style="margin-left: 20px">
+                        <option value="type">Select your note type</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+
+                    <label class="control-label required" for="description" style="margin-top: 30px">Description</label><br>
+                    <textarea class="area" rows="4" cols="50" placeholder="Enter your description"></textarea>
+                </div>
+                <div class="right">
+                    <label for="username" style="margin-top: 40px;">Category</label><br>
+                    <select id="country">
+                        <option value="category">Select your category</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+
+                    <label class="control-label required" id="pic" for="exampleInputPassword1" style="margin-top: 30px;">Upload Notes</label><br>
+                    <input type="file" name="player_password" id="file" src="images/upload.png" placeholder="Upload your notes" />
+
+
+                    <label for="pages" style="margin-top: 30px;">Number Of Pages</label><br>
+                    <input type="number" id="pages" name="data[username]" required="required" class="form-control" placeholder="Engter number of pages">
+
+                </div>
+            </div>
+
+            <section class="admin1">
+                <h1>Institution Information</h1>
+            </section>
+
+            <div class="full">
+                <div class="left">
+
+                    <label for="username" style="margin-top: 40px">Country</label><br>
+                    <select id="country" style="margin-left: 20px">
+                        <option value="country">Select Your Country</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+
+                </div>
+
+                <div class="right">
+                    <label for="institution" style="margin-top: 40px;margin-left: -2px">Institution Name</label><br>
+                    <input type="text" id="institution" name="data[username]" required="required" class="form-control" placeholder="Enter your institution name">
+                </div>
+            </div>
+
+
+            <section class="admin1">
+                <h1>Course Details</h1>
+            </section>
+            <div class="full">
+                <div class="left">
+                    <label for="coursename" style="margin-top: 40px">Course Name</label><br>
+                    <input type="text" id="cname" name="data[username]" class="form-control" placeholder="Enter your course name" style="margin-left: 20px">
+
+                    <label for="professor" style="margin-top: 30px">Professor/Lecture</label><br>
+                    <input type="text" id="professor" name="data[username]" class="form-control" placeholder="Enter your professor name" style="margin-left: 20px">
+
+                </div>
+
+
+                <div class="right">
+                    <label for="code" style="margin-top: 40px;margin-left: -2px">Course Code</label><br>
+                    <input type="number" id="ccode" name="data[username]" required="required" class="form-control" placeholder="Enter your course code">
+                </div>
+            </div>
+
+
+            <section class="admin1">
+                <h1>Selling Information</h1>
+            </section>
+            <div class="full">
+                <div class="left">
+                    <label class="control-label required" for="price" style="margin-top: 40px">Sell For</label><br>
+                    <input type="radio" id="free" name="sell" value="free" style="margin-left: 20px">
+                    <label1 for="free">Free</label1>
+                    <input type="radio" id="paid" name="price" value="paid" style="margin-left: 20px">
+                    <label1 for="paid">Paid</label1>
+
+
+                    <label class="control-label required" for="price" style="margin-top: 30px">Sell Price</label><br>
+                    <input type="number" id="price" name="data[username]" class="form-control" placeholder="Enter your price" style="margin-left: 20px">
+
+
+                </div>
+
+                <div class="right">
+                    <label class="control-label required" id="pic" for="exampleInputPassword1" style="margin-top: 40px;">Note Preview</label><br>
+                    <input type="file" name="player_password" id="file" src="images/upload.png" placeholder="Upload your notes" />
+
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary">SAVE</button>
+            <button type="submit" class="btn btn-secondary">PUBLISH</button>
+
+        </form>
+    </div>
+
+    <hr>
+    <div class="footer">
+        <p>Copyright <i class="far fa-copyright"></i>TatvaSoft All rights reserved.</p>
+        <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="	fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../front/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Custom JS -->
+    <script src="../front/js/script.js"></script>
+    <script src="../front/js/nav.js"></script>
+
+</body>
+
+</html>

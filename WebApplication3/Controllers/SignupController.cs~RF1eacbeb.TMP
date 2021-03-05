@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Web;
+using System.Web.Mvc;
+using WebApplication3.context;
+
+namespace WebApplication3.Controllers
+{
+    public class SignupController : Controller
+    {
+        // GET: Signup
+       [HttpGet]
+        public ActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signup([Bind(Exclude= "IsEmailVerified,IsActive")] User user)
+        {
+            bool Status = false;
+            string message = "";
+
+            if(ModelState.IsValid)
+            {
+                #region 
+                var isExist = IsEmailExist(user.EmailID);
+                if(isExist)
+                {
+                    ModelState.AddModelError("EmailExist", "Emailalready exist");
+                    return View(user);
+                }
+                #endregion
+
+                #region Generate Activation Cide
+                user.IsActive = Guid.NewGuid();
+                #endregion
+
+                #region   Password Hashing
+                user.Password = Crypto.Hash(user.Password);
+                user.ConfirmPassword = Crypto.Hash(user.ConfirmPassword);
+                #endregion
+                user.IsEmailVerified = false;
+
+                #region
+                MyDatabaseEntities dc = new MyDatabaseEntities();
+                try
+                {
+                    object p = dc.User.Add(user);
+                    dc.SaveChanges();
+
+                    SendVerificationLinkEmail(user.EmailID, user.IsActive.ToString());
+                    message = "Registration done successfully";
+                    Status = true;
+                }
+                 finally
+                {
+                    Dispose();
+                }   
+                #endregion
+
+            }
+            else
+            {
+                message = "Invalid Request";
+            }
+            ViewBag.Message = message;
+            ViewBag.Status = Status;
+            return View(user);
+        }
+
+        [HttpGet]
+        public ActionResult VerifyAccount(string id)
+        {
+            bool Status = false;
+
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
+            {
+                dc.Configuration.ValidateOnSaveEnabled = false;
+                var v = dc.User.Where(a => a.IsActive == new Guid(id)).FirstOrDefault();
+                if (v != null)
+                {
+                    v.IsEmailVerified = true;
+                    dc.SaveChanges();
+                    Status = true;
+
+                }
+                else
+                {
+                    ViewBag.Message = "Invalid Reuest";
+                }
+            }
+            ViewBag.Status = true;
+            return View();
+                
+        }
+
+
+        [NonAction]
+        public bool IsEmailExist(string emailID)
+        {
+            MyDatabaseEntities dc = new MyDatabaseEntities();
+            try
+            {
+                var v = dc.User.Where(a => a.EmailID == emailID).FirstOrDefault();
+                return v != null;
+            }
+            finally
+            {
+                Dispose();
+                
+            }
+        }
+
+        [NonAction]
+        public void SendVerificationLinkEmail(string emailID,string IsActive)
+        {
+            var verifyUrl="/User/VerifyAccount/" + IsActive;
+            var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery.verifyUrl);
+
+            var fromEmail = new MailAddress("kananbhatt0210@gmail.com", "Dotnet Awesome");
+            var toEmail = new MailAddress(emailID);
+            var fromEmailPassword = "*********";
+            string subject = "Your account is successfully created";
+            string body = "</br></br>We are excited";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl=true,
+                DeliveryMethod=SmtpDeliveryMethod.Network,
+                UseDefaultCredentials=false,
+                Credentials=new NetworkCredential(fromEmail.Address,fromEmailPassword)
+
+            };
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            })
+                smtp.Send(message);
+        }
+    }
+
+    
+}

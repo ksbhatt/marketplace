@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../front/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body style="background: url('../front/images/banner-with-overlay.jpg')">
+    <!-- Login Page -->
+    <img src="../front/images/top-logo.png" alt="logo" class="center">
+    <div class="bg-img">
+
+        <form class="container">
+            <div class="heading">
+                <h1>Create an Account</h1>
+                <h6>Enter your details to signUP</h6>
+
+                <div class="create">
+                    <i class="fa fa-check-circle" style="color: rgb(3, 187, 3)"></i>
+                    <p style="color: rgb(3, 187, 3);margin: 5px;font-size: 16px;">Your account has been successfilly created.</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label required" for="username" style="margin-top: 30px">First Name*</label><br>
+                <input type="text" id="username" name="data[username]" required="required" class="form-control" placeholder="Enter your First Name" style="border: 1px solid #6255a5;margin-bottom: 30px">
+
+
+            </div>
+            <div class="form-group">
+                <label class="control-label required" for="username">Last Name*</label><br>
+                <input type="text" id="username" name="data[username]" required="required" class="form-control" placeholder="Enter your Last Name" style="border: 1px solid #d1d1d1;margin-bottom: 30px">
+
+
+            </div>
+            <div class="form-group">
+                <label class="control-label required" for="username">Email*</label><br>
+                <input type="email" id="exampleInputEmail1" name="data[username]" required="required" class="form-control" placeholder="Enter your email address" style="margin-bottom: 30px" style="border: 1px solid #d1d1d1;margin-bottom: 30px">
+
+            </div>
+            <div class="form-group">
+                <label id="password" for="exampleInputPassword1">Password</label>
+                <input type="password" name="player_password" id="pass_log_id" placeholder="Enter Your Password" style="margin-bottom: 30px" />
+                <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+            </div>
+            <div class="form-group">
+                <label id="password" for="exampleInputPassword1">Confirm Password</label><br>
+                <input type="password" name="player_password" id="pass_log_id" placeholder="Re-Enter Your Password" />
+                <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style=" margin-left: 50px"><a href="email_verification.html" style="color: white;text-decoration: none">SIGN UP</a></button>
+            <div id="signup">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="../front/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../front/js/script.js"></script>
+
+</body>
+
+</html>

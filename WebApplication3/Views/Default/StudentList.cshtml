@@ -1,0 +1,31 @@
+﻿@model List<WebApplication3.context.contact_us>
+
+
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>EmailID</th>
+        <th>Subject</th>
+        <th>Comments</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Name</td>
+    <td>@item.EmailID</td>
+    <td>@item.Subject</td>
+    <td>@item.Comments</td>
+    <td>
+        <a href="@Url.Action("Index",new { item.ID,item.Name,item.EmailID,item.Subject,item.Comments })" class="btn btn-success">Edit</a>
+        <a href="@Url.Action("Delete",new { item.ID })" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+    }
+</table>
+

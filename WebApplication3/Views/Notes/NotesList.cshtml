@@ -1,0 +1,29 @@
+﻿@model List<WebApplication3.context.SellerNote>
+@{
+    ViewBag.Title = "NotesList";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Number of Pages</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Category</td>
+            <td>@item.NoteType</td>
+            <td>@item.NumberOfPages</td>
+            <td>
+                <a href="@Url.Action("Notes",new { item.ID,item.Title,item.Category,item.NoteType,item.NumberOfPages })" class="btn btn-success">Edit</a>
+                <a href="@Url.Action("Delete",new { item.ID })" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

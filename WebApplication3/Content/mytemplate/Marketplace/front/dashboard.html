@@ -1,0 +1,391 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--<title>Sticky Header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">-->
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../front/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="../front/css/main.css">
+</head>
+
+<body>
+   <div class="wrapper scroll-2" id="wrapper-2">
+        <div class="logo-wrapper">
+            <img src="../front/images/logo.png" id="imgid">
+
+        </div>
+        <div class="sec-8">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="icon8"></i>
+                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+            </a>
+        </div>
+        <div class="navigation-wrapper1" id="navigation">
+            <a href="search.html">Search Notes</a>
+            <a href="dashboard.html">Sell Your Notes</a>
+            <a href="buyer_requests.html">Buyer Requests</a>
+            <a href="faq_page.html">FAQ</a>
+            <a href="contact_us.html">Contact Us</a>
+            <div class="dropdown">
+                <button1 onclick="myFunction()" class="dropbtn"><a href="#"><img src="../front/images/customer-1.png" style="height: 40px;width: 40p;margin-top: 5px;margin-left: 2px"></a></button1>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#user_profile">User Profile</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <a href="#"><button type="button" style="width: 85px;margin-top:5px;margin-left: 3px">Logout</button></a>
+        </div>
+
+    </div>
+    <!-- <main>
+            <section class="1section"></section>
+        </main> -->
+    <!-- <section class="front">
+        <div class="content-box-md">
+            <div class="containery">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 style="margin-top: 100px">Dashboard</h1>
+                    </div>
+
+                    <div class="col-md-6">
+                        <buttonx type="button" class="btn btn-secondary">ADD Note</buttonx>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="dashboard" style="width: 235px">
+                            <img src="images/seller.png" style="margin-left: 20%">
+                            <h2 style="margin-left: 50px">My Earning</h2>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="dashboard" style="width: 613px;margin-left:-15px">
+                            <h2 style="margin-left: 100px;margin-top: 40px">100 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $10,00,000</h2>
+                            
+                            <p1>&emsp;&emsp;&emsp;Number of Notes Sold&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Money Earned</p1>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="dashboard" style="width: 179px;margin-left: 130%">
+                            <h2 style="margin-left: 70px;margin-top: 35px">38</h2>
+                            <p1 style="margin-left: 30px">My Downloads</p1>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="dashboard" style="width: 179px;margin-left: 100%">
+                            <h2 style="margin-left: 70px;margin-top: 35px">12</h2>
+                            <p1 style="margin-left: 30px">My Rejected <br>&emsp;&emsp;&emsp;&ensp;Notes</p1>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="dashboard" style="width: 179px;margin-left: 70%">
+                            <h2 style="margin-left: 65px;margin-top: 35px">102</h2>
+                            <p1 style="margin-left: 25px">Buyer Requests</p1>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </section> -->
+
+    <section class="admin">
+        <div class="content-box-md">
+            <div class="container1">
+
+                <div class="search-flex" style="margin-top: 60px;">
+                    <div>
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div class="flex-search-buttons">
+                        <button type="button">Add Note</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dashboard-2">
+        <div class="my-earning">
+
+        </div>
+        <div class="row-flex">
+            <div class="dashboard-8">
+                <div class="inner-dashboard">
+                    <div class="in-ds-1">
+                        <img src="images/seller.png" style="margin-left: 20%">
+                        <h2 style="margin-left: 50px">My Earning</h2>
+                    </div>
+                    <div class="in-ds">
+                        <h2>100</h2>
+                        <p1><a href="my_sold_notes.html">Number of Notes Sold</a></p1>
+                    </div>
+                    <div class="in-ds">
+                        <h2>$10,00,000</h2>
+                        <p1><a href="my_sold_notes.html">Money Earned</a></p1>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-8">
+                <h2>38</h2>
+                <p1><a href="my_downloads.html">My Downloads</a></p1>
+            </div>
+
+            <div class="dashboard-8">
+                <h2>12</h2>
+                <p1><a href="my_rejected_notes.html">My Rejected Notes</a></p1>
+            </div>
+
+
+            <div class="dashboard-8">
+                <h2>102</h2>
+                <p1><a href="buyer_requests.html">Buyer Requests</a></p1>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section class="admin">
+        <div class="content-box-md">
+            <div class="container1">
+
+                <div class="search-flex" style="margin-top: 60px;">
+                    <div>
+                        <h1>In Progress Notes</h1>
+                    </div>
+                    <div class="flex-search-buttons">
+                        <input type="text" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                          background-position: 10px 10px; background-repeat: no-repeat">
+
+                        <button type="button">SEARCH</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="overflow-x: auto;">
+        <table class="main-table" border="1" width="98%">
+            <col style="width:2%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:15%">
+            <col style="width:8%">
+            <col style="width:5%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:2%">
+            <tr class="line">
+                <th>ADDED DATE</th>
+                <th>TITLE</th>
+                <th>CATEGORY</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+
+            </tr>
+            <tr class="line">
+                <td>09-10-2020</td>
+                <td>Data Science</td>
+                <td>Science</td>
+                <td>Draft</td>
+                <td><a href="add_notes.html"><img src="images/edit.png" href="add_notes.html"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a></td>
+            </tr>
+            <tr class="line">
+                <td>10-10-2020</td>
+                <td>Accounts</td>
+                <td>Commerce</td>
+                <td>In Review</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>11-10-2020</td>
+                <td>Social Studies</td>
+                <td>Social</td>
+                <td>Submitted</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>12-10-2020</td>
+                <td>AI</td>
+                <td>IT</td>
+                <td>Submitted</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>13-10-2020</td>
+                <td>Lorem ipsum dolor sit amestectetur</td>
+                <td>Lorem</td>
+                <td>Draft</td>
+                <td><a href="add_notes.html"><img src="images/edit.png"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a></td>
+            </tr>
+
+
+        </table>
+    </div>
+    <div class="page-flex">
+
+        <nav>
+            <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="admin">
+        <div class="content-box-md">
+            <div class="container1">
+
+                <div class="search-flex" style="margin-top: 60px;">
+                    <div>
+                        <h1>Published Notes</h1>
+                    </div>
+                    <div class="flex-search-buttons">
+                        <input type="text" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                        <button type="button">SEARCH</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="overflow-x: auto;">
+        <table class="main-table" border="1" width="98%">
+            <col style="width:2%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:15%">
+            <col style="width:8%">
+            <col style="width:5%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:2%">
+            <tr class="line">
+                <th>ADDED DATE</th>
+                <th>TITLE</th>
+                <th>CATEGORY</th>
+                <th>SELL TYPE</th>
+                <th>PRICE</th>
+                <th>ACTIONS</th>
+
+            </tr>
+            <tr class="line">
+                <td>09-10-2020</td>
+                <td>Data Science</td>
+                <td>Science</td>
+                <td>Paid</td>
+                <td>$575</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>10-10-2020</td>
+                <td>Accounts</td>
+                <td>Commerce</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>11-10-2020</td>
+                <td>Social Studies</td>
+                <td>Social</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>12-10-2020</td>
+                <td>AI</td>
+                <td>IT</td>
+                <td>Paid</td>
+                <td>$3542</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+            <tr class="line">
+                <td>13-10-2020</td>
+                <td>Lorem ipsum dolor sit amestectetur</td>
+                <td>Lorem</td>
+                <td>Free</td>
+                <td>$0</td>
+                <td><a href="note_details.html"><img src="images/eye.png"></a></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="page-flex">
+
+        <nav>
+            <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <hr>
+    <div class="footer">
+        <p>Copyright <i class="far fa-copyright"></i>TatvaSoft All rights reserved.</p>
+        <div>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="	fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../front/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+    <!-- Custom JS -->
+    <script src="../front/js/script.js"></script>
+    <script src="../front/js/nav.js">
+    </script>
+
+</body>
+
+</html>

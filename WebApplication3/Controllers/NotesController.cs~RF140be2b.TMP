@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using WebApplication3.context;
+
+namespace WebApplication3.Controllers
+{
+    public class NotesController : Controller
+    {
+        // GET: Notes
+        Sample_1Entities4 dbObj = new Sample_1Entities4();
+        public ActionResult Notes(SellerNote obj)
+        {
+            return View(obj);
+        }
+
+        [HttpPost]
+        public ActionResult AddNotes(SellerNote model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                SellerNote obj = new SellerNote();
+                obj.ID = model.ID;
+                obj.SellerID = model.SellerID;
+                obj.Status = model.Status;
+                obj.ActionedBy = model.ActionedBy;
+                obj.AdminRemarks = model.AdminRemarks;
+                obj.PublishedDate = model.PublishedDate;
+                obj.Title = model.Title;
+                obj.Category = model.Category;
+                obj.DisplayPicture = model.DisplayPicture;
+                obj.NoteType = model.NoteType;
+                obj.NumberOfPages = model.NumberOfPages;
+                obj.Description = model.Description;
+
+
+                if (model.ID == 0)
+                {
+
+                    dbObj.SellerNotes.Add(obj);
+                    dbObj.SaveChanges();
+                }
+                else
+                {
+                    dbObj.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+                    dbObj.SaveChanges();
+                }
+            }
+            ModelState.Clear();
+
+            return View("Notes");
+        }
+
+    }
+}
