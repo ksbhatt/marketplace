@@ -1,0 +1,133 @@
+﻿
+@model NotesMarketplace.context.UserProfile
+
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+
+
+@using (Html.BeginForm("AddProfile", "UserProfile", FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    <section class="first-section">
+
+        <h2>User Profile</h2>
+    </section>
+
+
+    <section class="admin1">
+        <h1>Basic Profile Details</h1>
+
+    </section>
+    <div class="form-group1">
+
+        <form>
+            <div class="full">
+                <div class="left">
+                    <!--<label class="control-label required" for="username" style="margin-top: 40px">First Name</label><br>
+                    <input type="text" id="username1" name="data[username]" required="required" value="@Session["FirstName"].ToString()" class="form-control" placeholder="Enter your first name" style="margin-left: 20px">
+
+
+
+                    <label class="control-label required" for="username" style="margin-top: 30px">Email</label><br>
+                    <input type="email" id="mail" name="data[username]" required="required" value="@Session["EmailID"].ToString()" class="form-control" placeholder="Enter your email address" style="margin-left: 20px">
+
+
+                    <label for="gender" style="margin-top: 30px">Gender</label><br>
+                    <select id="gender" name="gender" style="margin-top: 10px;margin-left: 20px">
+                        <option value="select">Select Your Gender</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+
+
+                    <label id="pic" for="exampleInputPassword1" style="margin-top: 30px">Profile Picture</label><br>
+                    <input type="file" name="ImageFile" style="padding:5px 250px" />
+
+
+                </div>
+                <div class="right">
+                    <label class="control-label required" for="username" style="margin-top: 40px;margin-left: 2px">Last Name</label><br>
+                    <input type="text" id="username1" name="data[username]" required="required" value="@Session["LastName"].ToString()" class="form-control" placeholder="Enter your last name">
+
+
+
+                    <label for="birthday" style="margin-top: 30px;margin-left: -2px">Date of Birth</label><br>
+                    <input type="datetime-local" id="birthday" name="birthday" placeholder="Enter your date of birth" style="background-color: white"><br>
+
+
+                    <label id="pnumber" for="exampleInputPassword1" style="margin-top: 30px;margin-left: -2px">Phone Number</label><br>
+                    <select id="code" name="code" style="margin-top: 10px">
+                        <option value="91">+91</option>
+                        <option value="1">+1</option>
+                        <option value="2">+2</option>
+                        <option value="3">+3</option>
+                    </select>
+
+
+                    <input type="tel" name="player_password" id="pass_log_id4" placeholder="Enter your phone number" style="margin-top: 10px" />
+                </div>
+            </div>
+
+            <section class="admin1">
+                <h1>Address Details</h1>
+
+            </section>-->
+
+            <div class="full">
+                <div class="left">
+                    <label class="control-label required" for="username" style="margin-top: 40px">Address Line 1</label><br>
+                    @Html.TextBoxFor(x => x.AddressLine1, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+
+                    <!--<label class="control-label required" for="username" style="margin-top: 30px">City</!--label><br>
+                    <input type="text" id="city" name="data[username]" required="required" class="form-control" placeholder="Enter your email city" style="margin-left: 20px">
+
+
+                    <label class="control-label required" for="gender" style="margin-top: 30px">ZipCode</label><br>
+                    <input type="text" id="zcode" name="data[username]" class="form-control" placeholder="Enter your ZipCode" style="margin-left: 20px">
+
+                </div>
+        <div class="right">
+
+            <label class="control-label required" for="username" style="margin-top: 40px;margin-left: -2px">Address Line 2</label><br>
+            <input type="text" id="address" name="data[username]" required="required" class="form-control" placeholder="Enter your address">
+
+
+
+            <label class="control-label required" for="username" style="margin-top: 30px;margin-left: -2px">State</label><br>
+            <input type="text" id="state" name="data[username]" required="required" class="form-control" placeholder="Enter your state">
+
+
+            <label class="control-label required" id="pnumber" for="exampleInputPassword1" style="margin-top: 30px;margin-left: -2px">Country</label><br>
+            <input type="text" name="player_password" id="country" required="required" placeholder="Enter your country">
+        </div>
+    </div>
+
+
+    <section class="admin1">
+        <h1>University and College Information</h1>
+
+    </section>
+
+    <div class="full-2">
+        <div class="top">
+            <label for="username">University</label><br>
+            <input type="text" id="uni" name="data[username]" class="form-control" placeholder="Enter your university" style="margin-left: 20px">
+
+
+            <label for="username">College</label><br>
+            <input type="text" id="college" name="data[username]" required="required" class="form-control" placeholder="Enter your college" style="margin-left: 20px">
+
+        </div>-->
+                    <div class="bottom">
+                        <button type="submit" class="btn btn-secondary">SUBMIT</button>
+                    </div>
+                </div>
+
+</form>
+    </div>
+}
+

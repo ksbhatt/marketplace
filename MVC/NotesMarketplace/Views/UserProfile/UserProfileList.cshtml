@@ -1,0 +1,50 @@
+﻿@model List< NotesMarketplace.context.UserProfile>
+
+@{
+    ViewBag.Title = "UserProfileList";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>UserID</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <!--<th>SecondaryEmailAddress</th>
+    <th>CountryCode</th>-->
+        <th>PhoneNumber</th>
+        <th>ProfilePicture</th>
+        <th>AddressLine1</th>
+        <th>AddressLine2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        <th>Country</th>
+        <th>University</th>
+        <th>College</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.UserID</td>
+    <td>@item.DOB</td>
+    <td>@item.Gender</td>
+
+    <td>@item.PhoneNumber</td>
+   <td>@item.ProfilePicture</td>
+    <td>@item.AddressLine1</td>
+    <td>@item.AddressLine2</td>
+    <td>@item.City</td>
+    <td>@item.State</td>
+    <td>@item.Zipcode</td>
+    <td>@item.Country</td>
+    <td>@item.University</td>
+    <td>@item.College</td>
+    <td>
+        <a href="@Url.Action("UserProfile",new { item.ID,item.UserID,item.DOB,item.Gender,item.PhoneNumber,item.ProfilePicture,item.AddressLine1,item.AddressLine2,item.City,item.State,item.Zipcode,item.Country,item.University,item.College})" class="btn btn-success">Edit</a>
+        <a href="@Url.Action("Delete",new { item.ID })" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+    }
+</table>
+

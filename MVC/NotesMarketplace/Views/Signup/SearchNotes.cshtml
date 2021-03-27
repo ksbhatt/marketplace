@@ -1,0 +1,367 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<NotesMarketplace.context.SellerNote>
+
+@{
+    ViewBag.Title = "SearchNotes";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+
+<!--
+@if (Session["ID"] != null)
+{<h1> Welcome @Session["ID"].ToString() </h1>
+}
+
+@if (Session["FullName"] != null)
+{
+    <p>Name: @Session["FullName"].ToString()</p>
+    <p>Email: @Session["EmailID"].ToString()</p>
+    <a href="@Url.Action("Logout","Signup")" class="btn btn-warning">Logout</a>
+    }
+    -->
+
+<section class="first-section">
+
+    <h2>Search Notes</h2>
+</section>
+
+<section class="admin1">
+    <h1>Search and Filter Notes</h1>
+</section>
+
+<div class="fs">
+    <div class="filter">
+        <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+    </div>
+
+    <div class="select">
+        <select name="type" id="select">
+            <option value="select_type">Select Type</option>
+            <option value="type_1">Type 1</option>
+            <option value="type_2">Type 2</option>
+            <option value="type_3">Type 3</option>
+        </select>
+
+        <select name="category" id="select">
+            <option value="select_category">Select Category</option>
+            <option value="category_1">category1</option>
+            <option value="category_2">category 2</option>
+            <option value="category_3">category 3</option>
+        </select>
+
+        <select name="university" id="select">
+            <option value="select_university">Select University</option>
+            <option value="university_1">universitye 1</option>
+            <option value="university_2">university 2</option>
+            <option value="university_3">university 3</option>
+        </select>
+
+        <select name="course" id="select">
+            <option value="select_course">Select Course</option>
+            <option value="course_1">course 1</option>
+            <option value="course_2">course 2</option>
+            <option value="course_3">course 3</option>
+        </select>
+
+        <select name="country" id="select">
+            <option value="select_country">Select Country</option>
+            <option value="country_1">country 1</option>
+            <option value="country_2">country 2</option>
+            <option value="country_3">country 3</option>
+        </select>
+
+        <select name="rating" id="select">
+            <option value="select_rating">Select Rating</option>
+            <option value="rating_1">rating 1</option>
+            <option value="rating_2">rating 2</option>
+            <option value="rating_3">rating 3</option>
+        </select>
+    </div>
+</div>
+
+<section class="admin1">
+    <h1>Total 18 Notes</h1>
+</section>
+
+<table class="table table-hover" id="myTable">
+    <div class="grid-container">
+        @foreach (var item in Model)
+        {
+            <div class="grid-item">
+                <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/@item.DisplayPicture">
+                <div class="box">
+                    <h1>@item.Title</h1>
+
+                    <div class="demo-solution demo-solution--flexbox">
+                        <div class="it1">
+                            <div class="it">
+                                <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                                <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                                <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            </div>
+                            <div class="it">
+                                <span>@item.UniversityName, @item.Country</span>
+                                <span>@item.NumberOfPages</span>
+                                <span>@item.PublishedDate</span>
+                                <span style="color: red">@item.AdminRemarks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rate" style="padding: 5px 0 0 30px">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>100 Reviews
+                    </div>
+                </div>
+            </div>
+        }
+
+
+        <!--<div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/2.jpg" style="width: auto;height:auto;">
+            <div class="box">
+                <h1>Computer Science</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1" style="padding: 10px 0">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/3.jpg">
+            <div class="box">
+                <h1>Basic Computer Engineering Tech India<br>Publication Series</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/4.jpg">
+            <div class="box">
+                <h1>Computer Science Illuminated<br>Seventh Edition</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/5.jpg">
+            <div class="box">
+                <h1>The Principles of Computer<br>Hardware - Oxford</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/6.jpg">
+            <div class="box">
+                <h1>The Computer Book</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1" style="padding: 10px 0">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/1.jpg">
+            <div class="box">
+                <h1>Computer Operatin System - Final<br>Exam Book With PAper Solution</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/2.jpg">
+            <div class="box">
+                <h1>Computer Science</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1" style="padding: 10px 0">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/3.jpg">
+            <div class="box">
+                <h1>Basic Computer Engineering Tech India<br>Publication Series</h1>
+                <div class="demo-solution demo-solution--flexbox">
+                    <div class="it1">
+                        <div class="it">
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                            <img width="100" height="50" src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/calendar.png" alt="" />
+                        </div>
+                        <div class="it">
+                            <span>University of California,US</span>
+                            <span>204 Pages</span>
+                            <span>Thu, Nov 26,2020.</span>
+                            <span style="color: red">5 users marked this note as inappropriate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rate" style="padding: 5px 0 0 30px">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>100 Reviews
+                </div>
+            </div>
+        </div>-->
+
+
+
+        @Html.PagedListPager(Model, page => Url.Action("SearchNotes", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] }),
+        new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })
+    </div>
+    </table>
+    <!--<div class="page-flex">
+
+        <nav>
+            <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>-->
+
+    <hr>
+
+
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Jquery -->

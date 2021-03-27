@@ -1,0 +1,90 @@
+﻿@model List<NotesMarketplace.context.Download>
+
+@{
+    ViewBag.Title = "DownloadedNotes";
+    Layout = "~/Views/Shared/_mytemplate1.cshtml";
+}
+
+
+<main>
+    <section class="first-section"></section>
+</main>
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>My Downloads</h1>
+                </div>
+
+
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+
+
+
+                    <button type="button">SEARCH</button>
+
+
+                </div>
+            </div>
+        </div>
+</section>
+
+<table class="table table-hover" id="myTable">
+    <tr>
+        <th>SR.NO.</th>
+        <th>NOTE TITLE</th>
+        <th>CATEGORY</th>
+        <th>BUYER</th>
+        <!--<th>SecondaryEmailAddress</th>
+        <th>CountryCode</th>-->
+        <th>SELL TYPE</th>
+        <th>PRICE</th>
+        <th>DOWNLOADED DATE/TIME</th>
+    </tr>
+   
+        @foreach (var item in Model)
+        {
+          
+             <tr>
+        <td>@item.Number</td>
+        <td>@item.NoteTitle</td>
+        <td>@item.NoteCategory</td>
+
+        <td>@item.Email</td>
+        <td>@item.SellType</td>
+        <td>$@item.PurchasedPrice</td>
+        <td>@item.AttachmentDownloadedDate</td>
+        <td><img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png"></td>
+        <td class="more">
+            <button id="more-btn" class="more-btn">
+                <span class="more-dot"></span><br>
+                <span class="more-dot"></span><br>
+                <span class="more-dot"></span>
+            </button>
+            <div class="more-menu">
+                <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+                    <li class="more-menu-item" role="presentation">
+                        <button type="button" class="more-menu-btn" role="menuitem">Download Note</button>
+                    </li>
+                    <li class="more-menu-item" role="presentation">
+                        <button type="button" class="more-menu-btn" role="menuitem" onclick="clicked()">Add Reviews/Feedback</button>
+                    </li>
+                    <li class="more-menu-item" role="presentation">
+                        <button type="button" class="more-menu-btn" role="menuitem">Report as inappropriate</button>
+                    </li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+
+        }
+
+</table>
+
+
