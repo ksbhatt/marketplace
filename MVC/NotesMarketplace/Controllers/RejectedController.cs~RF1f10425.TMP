@@ -1,0 +1,24 @@
+﻿using NotesMarketplace.context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace NotesMarketplace.Controllers
+{
+    [SessionState(System.Web.SessionState.SessionStateBehavior.Default)]
+    public class RejectedController : Controller
+    {
+        Sample_1Entities24 dbObj = new Sample_1Entities24();
+        // GET: Rejected
+        public ActionResult RejectedNotes()
+        {
+            
+                var res = dbObj.SellerNotes.Where(x => x.Status == 2).First(); 
+                return View(res);
+            
+            
+        }
+    }
+}

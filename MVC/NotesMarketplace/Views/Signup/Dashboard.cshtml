@@ -1,246 +1,121 @@
-﻿
+﻿@model IEnumerable<NotesMarketplace.context.PublishedModel>
 @{
     ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
 }
 
 <h2>Dashboard</h2>
 
-@if (ViewBag.ID != null)
+<!--@if (ViewBag.ID != null)
 {
     <h2>Hello, @ViewBag.ID</h2>
-}
+}-->
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <!-- important meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+            <h1 style="margin-top: 100px">Dashboard</h1>
 
-    <!-- title -->
-    <title>MARKETPLACE</title>
-
-    <!-- favicon -->
-    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/favicon.ico">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/css/bootstrap/6.1%20bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--custom CSS -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/css/main.css">
-</head>
-
-<body>
-    <div class="wrapper" id="wrapper">
-        <div class="logo-wrapper">
-            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/logo.png" id="imgid">
-
-        </div>
-        <div class="sec-8">
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars" id="icon8"></i>
-                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
-            </a>
-        </div>
-        <div class="navigation-wrapper" id="navigation">
-            <a href="#">Dashboard</a>
-            <a href="#">Notes</a>
-            <a href="#">Members</a>
-            <a href="#">Reports</a>
-            <a href="#">Settings</a>
-            <a href="#"><img src="../admin/images/customer-1.png" style="height: 40px;width: 40p;margin-top: 5px;margin-left: 2px"></a>
-            <a href="#"><button type="button" style="background-color: #6255a5;width: 85px;margin-top:5px;margin-left: 3px">Logout</button></a>
-        </div>
-
-    </div>
-
-    <section class="admin">
-        <div class="content-box-md">
-            <div class="container1">
-                <h1 style="margin-top: 100px">Dashboard</h1>
-
-                <div class="row-flex">
-                    <div class="dashboard">
-                        <h2>20</h2>
-                        <p1>Number of notes Review for Publish</p1>
-                    </div>
-
-                    <div class="dashboard">
-                        <h2>103</h2>
-                        <p1>Number of New Notes Downloaded</p1>
-                        <p1>(Last 7 days)</p1>
-                    </div>
-
-                    <div class="dashboard">
-                        <h2>223</h2>
-                        <p1>Number of New Registrations(Last 7 Days)</p1>
-                    </div>
-
+            <div class="row-flex">
+                <div class="dashboard">
+                    <h2>20</h2>
+                   
+                    <p1>Number of notes Review for Publish</p1>
                 </div>
 
-                <div class="search-flex">
-                    <div>
-                        <h1>Published Notes</h1>
-                    </div>
-                    <div class="flex-search-buttons">
-                        <input type="text" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                <div class="dashboard">
+                    <h2>103</h2>
+                    <p1>Number of New Notes Downloaded</p1>
+                    <p1>(Last 7 days)</p1>
+                </div>
+
+                <div class="dashboard">
+                    <h2>223</h2>
+                    <p1>Number of New Registrations(Last 7 Days)</p1>
+                </div>
+
+            </div>
+
+            <div class="search-flex">
+                <div>
+                    <h1>Published Notes</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
                           background-position: 10px 10px; background-repeat: no-repeat">
 
-                        <button type="button">SEARCH</button>
+                    <button type="button">SEARCH</button>
 
-                        <select id="month">
-                            <option value="month">Select Month</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
+                    <select id="month">
+                        <option value="month">Select Month</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <div style="overflow-x: auto;">
-        <table class="main-table" border="1" width="98%">
-            <col style="width:5%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:10%">
-            <col style="width:8%">
-            <col style="width:2%">
-
-            <tr class="line">
-                <th>SR NO.</th>
-                <th>TITLE</th>
-                <th>CATEGORY</th>
-                <th>ATTACHMENT SIZE</th>
-                <th>SELL TYPE</th>
-                <th>PRICE</th>
-                <th>PUBLISHER</th>
-                <th>PUBLISHED DATE</th>
-                <th>NUMBERS OF<br>DOWNLOADS</th>
-                <th></th>
-            </tr>
-            <tr class="line">
-                <td>1</td>
-                <td>Data Science</td>
-                <td>Science</td>
-                <td>10KB</td>
-                <td>Free</td>
-                <td>$0</td>
-                <td>Pritesh Panchal</td>
-                <td>09-10-2020</td>
-                <td>10</td>
-                <td></td>
-            </tr>
-            <tr class="line">
-                <td>2</td>
-
-                <td>Accounts</td>
-                <td>Commerce</td>
-                <td>23MB</td>
-                <td>Paid</td>
-                <td>$22</td>
-                <td>Rahil Shah</td>
-                <td>10-10-2020</td>
-                <td>10</td>
-                <td></td>
-            </tr>
-            <tr class="line">
-                <td>3</td>
-
-                <td>Social Studies</td>
-                <td>Social</td>
-                <td>3MB</td>
-                <td>Paid</td>
-                <td>$56</td>
-                <td>Anish Patel</td>
-                <td>11-10-2020</td>
-                <td>10</td>
-                <td></td>
-            </tr>
-            <tr class="line">
-                <td>4</td>
-
-                <td>AI</td>
-                <td>IT</td>
-                <td>1MB</td>
-                <td>Free</td>
-                <td>$0</td>
-                <td>Vijay Vaishnav</td>
-                <td>12-10-2020</td>
-                <td>34</td>
-                <td></td>
-            </tr>
-            <tr class="line">
-                <td>2</td>
-
-                <td>Lorem ipsum</td>
-                <td>Lorem</td>
-                <td>105KB</td>
-                <td>Paid</td>
-                <td>$90</td>
-                <td>Mehul Patel</td>
-                <td>13-10-2020</td>
-                <td>19</td>
-                <td></td>
-            </tr>
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+            <li>Download Note</li>
+            <li><a href="">View  Details</a></li>
+            <li>Unpublish</li>
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="98%" id="myTable">
 
 
+        <tr class="line">
+            <th>SR NO.</th>
+            <th>TITLE</th>
+            <th>CATEGORY</th>
+            <th>ATTACHMENT SIZE</th>
+            <th>SELL TYPE</th>
+            <th>PRICE</th>
+            <th>PUBLISHER</th>
+            <th>PUBLISHED DATE</th>
+            <th>NUMBERS OF<br>DOWNLOADS</th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.sellernote.ID</td>
+                    <td>@item.sellernote.Title</td>
+                    <td>@item.notecategory.Name</td>
+                    <td>@item.sellernote.AttachmentSize</td>
+                    <td>@item.sellernote.IsPaid</td>
+                    <td>@item.sellernote.SellingPrice</td>
+                    <td>@item.user.FullName</td>
+                    <td>@item.sellernote.CreatedDate</td>
+                    <td>@item.sellernote.NoOfDownloads</td>
+                    <td class="context-menu" data-container-id="context-menu-items" data-row-id="1"></td>
+                    <!--<td><a href="@Url.Action("Delete",new {item.sellernote.ID })"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a></td>-->
+                </tr>
+                }
+            </tbody>
         </table>
     </div>
 
-    <div class="page-flex">
+<div class="page-flex">
 
-        <nav>
-            <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
-                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
-                <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
-                <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
-                <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
-                <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
-                <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-        </nav>
-
-
-    </div>
-
-    <hr class="footer-hr">
-    <!--Footer-->
-    <div id="footer">
-        <p class="copyright">Version: 1.1.24</p>
-        <p class="social">Copyright &copy; Tatvasoft All rights reserved.</p>
-        <div>
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </div>
-
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <nav>
+        <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+        </ul>
+    </nav>
 
 
-    <!-- Bootstrap JS -->
-    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/js/bootstrap/bootstrap.min.js"></script>
+</div>
 
-    <!-- Custom JS -->
-    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/js/script.js"></script>
-
-    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/js/nav.js"></script>
-
-</body>
-
-</html>

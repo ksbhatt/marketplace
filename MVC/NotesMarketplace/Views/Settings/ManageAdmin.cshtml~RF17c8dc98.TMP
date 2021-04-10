@@ -1,0 +1,65 @@
+﻿@model List<NotesMarketplace.context.User>
+@{
+    ViewBag.Title = "ManageAdmin";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+            <h1 style="margin-top: 100px;">Manage Administrator</h1>
+            <div class="search-flex">
+                <div class="add-admin-btn">
+                    <a href="../Settings/Admin"> <button type="button">ADD ADMINISTRATOR</button></a>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<table class="table table-hover" id="myTable">
+    <tr>
+        <th>SR.NO.</th>
+
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+        <th>PHONE NO.</th>
+        <th>DATE ADDED</th>
+        <th>ACTIVE</th>
+        <th>ACTION</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.RoleID == 2)
+        {
+
+
+<tr>
+    <td>@item.ID</td>
+    <td>@item.FirstName</td>
+    <td>@item.LastName</td>
+    <td>@item.EmailID</td>
+    <td>@item.PhoneNo</td>
+    <td>@item.CreatedDate</td>
+    <td>@item.IsActive</td>
+    <!--<td>
+        <a href="@Url.Action("ContactUs", new { item.ID, item.FirstName, item.LastName, item.EmailID, item.PhoneNo, item.CreatedDate, item.IsActive })" class="btn btn-success">Edit</a>
+        <a href="@Url.Action("Delete", new { item.ID })" class="btn btn-danger">Delete</a>
+    </td>-->
+    <td>
+        <a href="@Url.Action("Category", new {res3 = item.ID,item.FirstName,item.LastName,item.EmailID,item.PhoneNo, item.CreatedDate,item.IsActive })"><img src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/edit.png"></a>
+        <a href="@Url.Action("DeleteAdmin", new {id3 = item.ID })"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a>
+    </td>
+</tr>
+        }
+    }
+</table>
+

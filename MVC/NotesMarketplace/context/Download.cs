@@ -14,6 +14,12 @@ namespace NotesMarketplace.context
     
     public partial class Download
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Download()
+        {
+            this.SellerNotesReportedIssues = new HashSet<SellerNotesReportedIssue>();
+        }
+    
         public int ID { get; set; }
         public int NoteID { get; set; }
         public int Seller { get; set; }
@@ -33,5 +39,11 @@ namespace NotesMarketplace.context
         public string Email { get; set; }
         public string SellType { get; set; }
         public int Number { get; set; }
+    
+        public virtual SellerNote SellerNote { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SellerNotesReportedIssue> SellerNotesReportedIssues { get; set; }
     }
 }

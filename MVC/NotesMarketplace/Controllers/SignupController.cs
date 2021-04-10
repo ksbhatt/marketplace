@@ -24,18 +24,7 @@ namespace NotesMarketplace.Controllers
 
         private DB_Entities _db = new DB_Entities();
         // GET: Home
-        /*public ActionResult IndexForSignup()
-        {
-            if (Session["ID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-        }
-        */
+       
 
         [HttpGet]
         public ActionResult Signup()
@@ -145,9 +134,13 @@ namespace NotesMarketplace.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            if (Session["EmailID"] != null)
+            if (Session["RoleID"] == "1")
             {
                 return RedirectToAction("SearchNotes", "Signup", new { ID = Session["ID"].ToString() });
+            }
+            else if(Session["RoleID"] == "2")
+            {
+                return RedirectToAction("Dashboard", "Signup", new { ID = Session["ID"].ToString() });
             }
             else
             {
@@ -165,10 +158,11 @@ namespace NotesMarketplace.Controllers
             Sample_1Entities1 dc = new Sample_1Entities1();
             {
                 var v = dc.Users.Where(a => a.EmailID == login.EmailID && a.Password == login.Password && a.RoleID == 1).FirstOrDefault();
-                var k = dc.Users.Where(a => a.EmailID == login.EmailID && a.Password == login.Password &&  a.RoleID == 0).FirstOrDefault();
+                var k = dc.Users.Where(a => a.EmailID == login.EmailID && a.Password == login.Password &&  a.RoleID == 2).FirstOrDefault();
                 if (v != null)
                 {
                     Session["ID"] = v.ID.ToString();
+                    Session["RoleID"] = v.RoleID.ToString();
                     Session["EmailID"] = v.EmailID.ToString();
                     Session["FullName"] = v.FirstName + " " + v.LastName;
                     Session["FirstName"] = v.FirstName;
@@ -205,6 +199,15 @@ namespace NotesMarketplace.Controllers
                 }
                 else if (k != null)
                 {
+                    Session["ID"] = k.ID.ToString();
+                    Session["RoleID"] = k.RoleID.ToString();
+                    Session["EmailID"] = k.EmailID.ToString();
+                    Session["FullName"] = k.FirstName + "" + k.LastName;
+                    Session["FirstName"] = k.FirstName;
+                    Session["LastName"] = k.LastName;
+
+                    return RedirectToAction("Dashboard");
+
                     if (string.Compare(login.Password, k.Password) == 0)
                     {
                         int timeout = login.RememberMe ? 525660 : 20;
@@ -245,7 +248,7 @@ namespace NotesMarketplace.Controllers
         Sample_1Entities11 dbObj = new Sample_1Entities11();
         public ActionResult SearchNotes(string ID,string searchBy,string search,int? page)
         {
-
+          
             if (searchBy == "Title")
             {
                 return View(dbObj.SellerNotes.Where(x => x.Title == search || search == null).ToList().ToPagedList(page ?? 1, 9));
@@ -257,73 +260,84 @@ namespace NotesMarketplace.Controllers
 
             var res = dbObj.SellerNotes.ToList();
             return View(res);
-
-            /*if (Session["ID"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-            if (Session["ID"] == null)
-            {
-                return RedirectToAction("Login", "Signup");
-            }
-            else
-            {
-                ViewBag.ID = ID;*/
             return View();
-            
+
         }
 
-        /*public ActionResult ContactUs(string ID)
+
+
+        public ActionResult NoteDetails(int id)
         {
-            if (Session["ID"] != null)
+
+            Sample_1Entities25 dc1 = new Sample_1Entities25();
             {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-            /*if (Session["ID"] == null)
-            {
-                return RedirectToAction("Login", "Signup");
-            }
-            else
-            {
-                ViewBag.ID = ID;
-                return View();
-            }
-        }*/
+
+                int ID = id;
+                var n = dc1.SellerNotes.Where(a => a.ID == id).FirstOrDefault();
+
+                SellerNote seller = new SellerNote
+                {
+                    Title = n.Title,
+                    
+                    UniversityName =n.UniversityName,
+                    Country=n.Country,
+                    Course = n.Course,
+                    CourseCode=n.CourseCode,
+                    Professor =n.Professor,
+                    NumberOfPages=n.NumberOfPages,
+                    ModifiedDate=n.ModifiedDate,
+                    Description=n.Description,
+                    AdminRemarks=n.AdminRemarks,
+                    DisplayPicture=n.DisplayPicture,
+                    DisplayNote=n.DisplayNote
+                    
+                };
+                ViewBag.Message = seller;
 
 
+            }
+            
+            return View();
+        }
+       
+
+        Sample_1Entities25 dbobj = new Sample_1Entities25();
         public ActionResult Dashboard(string ID)
         {
-
-            ViewBag.ID = ID;
-            return View();
-
-            if (Session["ID"] == null)
+            using (Sample_1Entities25 db = new Sample_1Entities25())
             {
-                return RedirectToAction("Login", "Signup");
+                //var v = db.Downloads.Where(a => a.IsSellerHasAllowedDownload == false).FirstOrDefault();
+
+                List<SellerNote> sellernotes = db.SellerNotes.ToList();
+                List<User> users = db.Users.ToList();
+                List<NoteCategory> notecategories = db.NoteCategories.ToList();
+
+
+                var publishednotes = from s in sellernotes
+                                where s.Status == 1
+                                join u in users on s.SellerID equals u.ID into table1
+                                from u in table1.ToList()
+                                join c in notecategories on s.Category equals c.ID into table2
+                                from c in table2.ToList()
+
+                                select new PublishedModel
+                                {
+                                    sellernote=s,
+                                    user = u,
+                                    notecategory=c
+
+
+                                };
+                return View(publishednotes);
             }
-            else
-            {
-                ViewBag.ID = ID;
-                return View();
-            }
+            
         }
-
-
+        
         public ActionResult Logout()
         {
             Session.Clear();//remove session
             return RedirectToAction("Login");
         }
-        /*FormsAuthentication.SignOut();
-        return RedirectToAction("Login", "User");*/
 
 
 
@@ -349,15 +363,17 @@ namespace NotesMarketplace.Controllers
             var verifyUrl = "/User/" + emailFor + "/" + IsActive;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var fromEmail = new MailAddress("yourmail@gmail.com", "Dotnet Awesome");
+            var fromEmail = new MailAddress("kananbhatt220@gmail.com", "Dotnet Awesome");
             var toEmail = new MailAddress(emailID);
-            var fromEmailPassword = "yourpassword";
+            var fromEmailPassword = "vwmgjphqrzyuwukc";
             string subject = "";
             string body = "";
             if (emailFor == "VerifyAccount")
             {
 
                 subject = "Your account is successfully created";
+
+                
                 body = "</br></br>We are excited to tell you that you account is" + "successfully created.Please cllick on the below link to verify your account" + "<br><br><a href='" + link + "'>" + link + " </a>";
             }
             else if (emailFor == "ResetPassword")
@@ -372,7 +388,7 @@ namespace NotesMarketplace.Controllers
                 Port = 587,
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
+                UseDefaultCredentials = true,
                 Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
 
             };
@@ -382,6 +398,7 @@ namespace NotesMarketplace.Controllers
                 Body = body,
                 IsBodyHtml = true
             })
+
                 smtp.Send(message);
         }
 
@@ -472,6 +489,17 @@ namespace NotesMarketplace.Controllers
             ViewBag.Message = message;
             return View(model);
 
+        }
+        public FileResult DownloadFile(string fileName)
+        {
+            //Build the File Path.
+            string path = Server.MapPath("~/PDFs/") + fileName;
+
+            //Read the File data into Byte Array.
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+            //Send the File to Download.
+            return File(bytes, "application/octet-stream", fileName);
         }
     }
 }

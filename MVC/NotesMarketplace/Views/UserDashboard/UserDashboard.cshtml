@@ -1,0 +1,205 @@
+﻿@model IEnumerable<NotesMarketplace.context.DashboardModel>
+@{
+    ViewBag.Title = "UserDashboard";
+    Layout = "~/Views/Shared/_mytemplate1.cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <a href="../Notes/Notes"><button type="button">Add Note</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="dashboard-2">
+    <div class="my-earning">
+
+    </div>
+    <div class="row-flex">
+        <div class="dashboard-8">
+            <div class="inner-dashboard">
+                <div class="in-ds-1">
+                    <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/seller.png" style="margin-left: 20%">
+                    <h2 style="margin-left: 50px">My Earning</h2>
+                </div>
+
+                <div class="in-ds">
+                    <h2>100</h2>
+                    <p1>Number of Notes Sold</p1>
+                </div>
+                <div class="in-ds">
+                    <h2>$10,00,000</h2>
+                    <p1>Money Earned</p1>
+                </div>
+            </div>
+        </div>
+        <a href="../Download/DownloadedNotes">
+            <div class="dashboard-8">
+                <h2>38</h2>
+                <p1>My Downloads</p1>
+            </div>
+        </a>
+        <a href="../Rejected/RejectedNotes">
+            <div class="dashboard-8">
+                <h2>12</h2>
+                <p1>My Rejected Notes</p1>
+            </div>
+            </a>
+        <a href="../BuyerRequest/Request">
+
+
+            <div class="dashboard-8">
+                <h2>102</h2>
+                <p1>Buyer Requests</p1>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>In Progress Notes</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                          background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div style="overflow-x: auto;">
+    <table class="main-table" border="1" width="98%" id="myTable">
+        <tr class="line">
+            <th>ADDED DATE</th>
+            <th>TITLE</th>
+            <th>CATEGORY</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.sellernote.ModifiedDate</td>
+                    <td>@item.sellernote.Title</td>
+                    <td>@item.notecategory.Name</td>
+                    <td>
+                        @if (item.sellernote.Status == 0)
+                        {
+                            <h5>In Review</h5>
+                        }
+                        @if (item.sellernote.Status == 1)
+                        {
+                            <h5>Submitted</h5>
+                        }
+                    </td>
+                    <td>
+                        <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png">
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+</div>
+<div class="page-flex">
+
+    <nav>
+        <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+        </ul>
+    </nav>
+</div>
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>Published Notes</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput1" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div style="overflow-x: auto;">
+    <table class="main-table" border="1" width="98%" id="myTable1">
+        <tr class="line">
+            <th>ADDED DATE</th>
+            <th>TITLE</th>
+            <th>CATEGORY</th>
+            <th>SELL TYPE</th>
+            <th>PRICE</th>
+            <th>ACTIONS</th>
+
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.sellernote.Status == 1)
+                {
+                <tr>
+                    <td>@item.sellernote.ModifiedDate</td>
+                    <td>@item.sellernote.Title</td>
+                    <td>@item.notecategory.Name</td>
+                    <td>@item.sellernote.IsPaid</td>
+                    <td>@item.sellernote.SellingPrice</td>
+                    <td>
+                        <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png">
+                    </td>
+                </tr>
+                    }
+                }
+        </tbody>
+
+    </table>
+</div>
+<div class="page-flex">
+
+    <nav>
+        <ul class="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
+            <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
+            <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
+        </ul>
+    </nav>
+</div>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3682a201abc4365952ae6cb9eb09ff6" Name="Diagram1">
+        <EntityTypeShape EntityType="Model12.Download" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model12.NoteCategory" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model12.SellerNote" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model12.SellerNotesReportedIssue" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model12.User" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="Model12.FK_Downloads_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_Downloads_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_Downloads_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotesReportedIssues_Downloads" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotes_NoteCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotes_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotes_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotesReportedIssues_SellerNotes" ManuallyRouted="false" />
+        <AssociationConnector Association="Model12.FK_SellerNotesReportedIssues_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,185 @@
+﻿
+
+@model NotesMarketplace.context.SellerNote
+
+@{
+    ViewBag.Title = "NoteDetails";
+    Layout = "~/Views/Shared/_mytemplate3.cshtml";
+
+}
+
+@{
+    var data = ViewBag.Message;
+}
+
+
+
+<section class="first-section">
+</section>
+<h1 class="main-header">Notes Details</h1>
+<div class="top-section">
+    <div class="item-1">
+        <div>
+
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/@data.DisplayPicture">
+            <h1 class="inner-header">@data.Title</h1>
+            <h3>Science</h3>
+            <p>@data.Description</p>
+            <!--@if (Session["ID"] == null)
+    {
+        <h5>Please <a href="../Signup/Login">Sign in/Register</a> to download this note</h5>
+    }
+    else { } -->
+            <!--@Html.ActionLink("Download", "DownloadFile", new { fileName = @data.DisplayNote })
+
+            {
+    <button type="button" class="btn btn-primary" a href="../Signup/DownloadFile" >
+        Download / $15
+    </button>}-->
+    
+             @Html.ActionLink("Download", "DownloadFile",  new { @class = "classname", fileName = @data.DisplayNote ,@id="submit"} ) 
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <i class="fas fa-check-circle" style="color: #6255a5;font-size: 40px;position: relative;left: 250px;top: 50px"></i>
+                            <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: Open Sans;font-size: 26px;font-weight: 600;line-height: 30px;color: #6255a5;text-align: center;padding-top: 70px">Thank you for purchasing! </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: white;color: black;position: absolute;top: -10px;right: -50px;font-size: 30px">
+
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="font-family:Open Sans;font-size: 18px; font-weight: 600;line-height: 22px;color: #333333">Dear Smith,</p>
+                            <p style="padding-top: 15px">As this is paid notes - you need to pay to seller Rahil Shah<br> offline. We will send him an email that you want to download<br>this note.Hee may contact you further for payment process<br> completion.</p>
+                            <p style="padding-top: 15px">In case you have urgency, <br>Please Contact us on +9195377345959</p>
+                            <p style="padding-top: 15px">Once he receives the payment and acknowledge us - selected<br> notes you can see over my downloads tab for download.</p>
+                            <p style="padding-top: 15px">Have a good day!</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="item-2">
+        <table>
+            <tr>
+                <td>Institution:</td>
+                <td><h4>@data.UniversityName</h4></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>@data.Country</td>
+            </tr>
+            <tr>
+                <td>Course Name:</td>
+                <td>@data.Course</td>
+            </tr>
+            <tr>
+                <td>Course Code:</td>
+                <td>@data.CourseCode</td>
+            </tr>
+            <tr>
+                <td>Professor:</td>
+                <td>@data.Professor</td>
+            </tr>
+            <tr>
+                <td>Number of pages:</td>
+                <td>@data.NumberOfPages</td>
+            </tr>
+            <tr>
+                <td>Approved Date:</td>
+                <td>@data.ModifiedDate</td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>100 Reviews</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>@data.AdminRemarks</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<hr>
+
+<div class="bottom-section">
+    <div class="item-1">
+        <h1>Notes Preview</h1>
+        <div class="box-notes">
+            <h3 class="header"><span>1</span> / 13</h3>
+
+            <h3>UNIT-1</h3>
+            <h4>16 Marks Question and Answers</h4>
+            <ol>
+                <li>Explain briefly about the Characteristics of GUI?</li>
+                <ul>
+                    <li>Sophisticated Visual Presentation</li>
+                    <li>Pick and click Interaction</li>
+                    <li>Restricted of Interface options</li>
+                    <li>Visualization</li>
+                    <li>Object Orientation</li>
+                    <li>Properties or Attributes of Objects</li>
+                    <li>Actions</li>
+                    <li>Application verses object or Data Orientation</li>
+                    <li>Views</li>
+                    <li>Use of recognition memory</li>
+                    <li>Concurrent performance of functions</li>
+                </ul>
+                <li>Mention the Advatages and Disadvantages of GUI in detail?</li>
+                <ul>
+                    <li>Advantages:</li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+    <div class="item-2">
+        <h1>Notes Preview</h1>
+        <div class="box-notes">
+            <div class="flex-container">
+                <div>
+                    <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>@data.Description</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div>
+                    <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>@data.Description</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div>
+                    <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>@data.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

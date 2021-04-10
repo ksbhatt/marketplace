@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using NotesMarketplace.context;
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace NotesMarketplace.Controllers
             model.NotePreview = "~/Image/" + fileName1;
             fileName1 = Path.Combine(Server.MapPath("~/Image/"), fileName1);
             model.ImageFile1.SaveAs(fileName1);
-
+     
 
             
             String FileExt = Path.GetExtension(model.files.FileName).ToUpper();
@@ -124,5 +124,7 @@ namespace NotesMarketplace.Controllers
 
             return View("Notes");
         }
+       
+       
     }
 }

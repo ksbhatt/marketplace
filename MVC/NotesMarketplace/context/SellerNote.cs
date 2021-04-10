@@ -15,6 +15,13 @@ namespace NotesMarketplace.context
 
     public partial class SellerNote
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SellerNote()
+        {
+            this.Downloads = new HashSet<Download>();
+            this.SellerNotesReportedIssues = new HashSet<SellerNotesReportedIssue>();
+        }
+    
         public int ID { get; set; }
         public int SellerID { get; set; }
         public int Status { get; set; }
@@ -38,11 +45,21 @@ namespace NotesMarketplace.context
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public bool IsActive { get; set; }
-        public  string DisplayPicture { get; set; }
-        public HttpPostedFileBase ImageFile { get;  set;  }
+        public string DisplayPicture { get; set; }
         public string NotePreview { get; set; }
-        public HttpPostedFileBase ImageFile1 { get; set; }
         public string DisplayNote { get; set; }
+        public HttpPostedFileBase ImageFile { get; set; }
+        public HttpPostedFileBase ImageFile1 { get; set; }
         public HttpPostedFileBase files { get; set; }
+        public string AttachmentSize { get; set; }
+        public Nullable<int> NoOfDownloads { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Download> Downloads { get; set; }
+        public virtual NoteCategory NoteCategory { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SellerNotesReportedIssue> SellerNotesReportedIssues { get; set; }
     }
 }

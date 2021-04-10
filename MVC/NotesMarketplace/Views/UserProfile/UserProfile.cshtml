@@ -63,7 +63,12 @@
 
 
                     <label id="pnumber" for="exampleInputPassword1" style="margin-top: 30px;margin-left: -2px">Phone Number</label><br>
-
+                    <select id="code" name="code" style="margin-top: 10px">
+                        <option value="91">+91</option>
+                        <option value="a">+1</option>
+                        <option value="b">+2</option>
+                        <option value="c">+3</option>
+                    </select>
 
 
                     @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", @style = "margin-left: 20px;" })

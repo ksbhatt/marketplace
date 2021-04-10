@@ -1,0 +1,63 @@
+﻿@model IEnumerable<NotesMarketplace.context.RequestModel>
+@{
+    ViewBag.Title = "SoldNotes";
+    Layout = "~/Views/Shared/_mytemplate1.cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>My Sold Notes</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+            <li>Download Note</li>
+            
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="98%" id="myTable">
+        <tr class="line">
+            <th>SR NO.</th>
+            <th>NOTE TITLE</th>
+            <th>CATEGORY</th>
+            <th>BUYER</th>
+            <th>SELL TYPE</th>
+            <th>PRICE</th>
+            <th>DOWNLOADED DATE/TIME</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.download.ID</td>
+                <td>@item.download.NoteTitle</td>
+                <td>@item.download.NoteCategory</td>
+                <td>@item.user.EmailID</td>
+                <td>@item.download.IsPaid</td>
+                <td>@item.download.PurchasedPrice</td>
+                <td>@item.download.CreatedDate</td>
+                <td class="context-menu" data-container-id="context-menu-items" data-row-id="1"></td>
+                <!--<td><a href="@Url.Action("Delete",new {item.download.ID })"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a></td>-->
+            </tr>
+                }
+            </tbody>
+        </table>
+    </div>

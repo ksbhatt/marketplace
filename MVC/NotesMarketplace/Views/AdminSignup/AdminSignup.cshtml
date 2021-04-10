@@ -1,0 +1,141 @@
+﻿@model NotesMarketplace.context.User
+
+@{
+    ViewBag.Title = "AdminSignup";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/main.css">
+</head>
+
+
+<body style="background: url('@Url.Content("~/Content/mytemplate/")Marketplace/front/images/banner-with-overlay.jpg')">
+
+
+
+
+
+
+    <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/logo.png" alt="logo" class="center">
+    <div class="bg-img">
+
+
+        @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+        {
+            if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Success</strong>@ViewBag.Message
+                </div>
+            }
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <form class="container">
+                    <div class="heading">
+                        <h1>Create an Account</h1>
+                        <h6>Enter your details to signUP</h6>
+
+                        <div class="create">
+                            <i class="fa fa-check-circle" style="color: rgb(3, 187, 3)"></i>
+                            <p style="color: rgb(3, 187, 3);margin: 5px;font-size: 16px;"> Your account has been successfilly created.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label required" for="username" style="margin-top: 30px">First Name*</label><br>
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label required" for="username">Last Name*</label><br>
+                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", style = "width: 90%;" })
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label required" for="username">Email*</label><br>
+                        @Html.TextBoxFor(x => x.EmailID, new { @class = "form-control", style = "width: 90%;" })
+                        @Html.ValidationMessage("EmailExist", new { @class = "" })
+
+                    </div>
+                    <div class="form-group">
+                        <label id="password" for="exampleInputPassword1">Password</label><br />
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", style = "width: 90%;" })
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="password" for="exampleInputPassword1">Confirm Password</label><br>
+                        <input type="password" name="player_password" id="pass_log_id" placeholder="Re-Enter Your Password" />
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="margin-left: 50px">SIGN UP</button>
+                    <div id="signup">
+                        <div>
+                            <p>Already have an account?</p> @Html.ActionLink("Login", "../Signup/Login",new { style = "padding-left: 55%;" })
+                        </div>
+
+
+                    </div>
+
+                </form>
+                if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong>@ViewBag.Message
+                    </div>
+                }
+            }
+        }
+
+
+
+    </div>
+
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/script.js"></script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,166 @@
+﻿
+
+@model NotesMarketplace.context.SellerNote
+@{
+    ViewBag.Title = "NoteDetails";
+    Layout = "~/Views/Shared/_mytemplate3.cshtml";
+}
+
+<section class="first-section">
+</section>
+<h1 class="main-header">Notes Details</h1>
+<div class="top-section">
+    <div class="item-1">
+        <div>
+            
+                
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/">
+            <h1 class="inner-header">Computer</h1>
+            <h3>Sciences</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Download / $15
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <i class="fas fa-check-circle" style="color: #6255a5;font-size: 40px;position: relative;left: 250px;top: 50px"></i>
+                            <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: Open Sans;font-size: 26px;font-weight: 600;line-height: 30px;color: #6255a5;text-align: center;padding-top: 70px">Thank you for purchasing! </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: white;color: black;position: absolute;top: -10px;right: -50px;font-size: 30px">
+
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p style="font-family:Open Sans;font-size: 18px; font-weight: 600;line-height: 22px;color: #333333">Dear Smith,</p>
+                            <p style="padding-top: 15px">As this is paid notes - you need to pay to seller Rahil Shah<br> offline. We will send him an email that you want to download<br>this note.Hee may contact you further for payment process<br> completion.</p>
+                            <p style="padding-top: 15px">In case you have urgency, <br>Please Contact us on +9195377345959</p>
+                            <p style="padding-top: 15px">Once he receives the payment and acknowledge us - selected<br> notes you can see over my downloads tab for download.</p>
+                            <p style="padding-top: 15px">Have a good day!</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+    <div class="item-2">
+        <table>
+            <tr>
+                <td>Institution:</td>
+                <td>University of California</td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>United State</td>
+            </tr>
+            <tr>
+                <td>Course Name:</td>
+                <td>Computer Engineering</td>
+            </tr>
+            <tr>
+                <td>Course Code:</td>
+                <td>248705</td>
+            </tr>
+            <tr>
+                <td>Professor:</td>
+                <td>Mr. Richard Brown</td>
+            </tr>
+            <tr>
+                <td>Number of pages:</td>
+                <td>277</td>
+            </tr>
+            <tr>
+                <td>Approved Date:</td>
+                <td>November 25 2020</td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>100 Reviews</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>5 Users marked this note as inappropriate</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<hr>
+
+<div class="bottom-section">
+    <div class="item-1">
+        <h1>Notes Preview</h1>
+        <div class="box-notes">
+            <h3 class="header"><span>1</span> / 13</h3>
+            <h3>UNIT-1</h3>
+            <h4>16 Marks Question and Answers</h4>
+            <ol>
+                <li>Explain briefly about the Characteristics of GUI?</li>
+                <ul>
+                    <li>Sophisticated Visual Presentation</li>
+                    <li>Pick and click Interaction</li>
+                    <li>Restricted of Interface options</li>
+                    <li>Visualization</li>
+                    <li>Object Orientation</li>
+                    <li>Properties or Attributes of Objects</li>
+                    <li>Actions</li>
+                    <li>Application verses object or Data Orientation</li>
+                    <li>Views</li>
+                    <li>Use of recognition memory</li>
+                    <li>Concurrent performance of functions</li>
+                </ul>
+                <li>Mention the Advatages and Disadvantages of GUI in detail?</li>
+                <ul>
+                    <li>Advantages:</li>
+                </ul>
+            </ol>
+        </div>
+    </div>
+    <div class="item-2">
+        <h1>Notes Preview</h1>
+        <div class="box-notes">
+            <div class="flex-container">
+                <div>
+                    <img src="images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>Lorem Ipsum is simply dummy text of the printing and<br> typesetting industry. It has been the industry's standard <br>dummy text ever since the 1500s.</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div>
+                    <img src="images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>Lorem Ipsum is simply dummy text of the printing and <br>typesetting industry. It has been the industry's standard <br>dummy text ever since the 1500s.</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div>
+                    <img src="images/avatar.png">
+                </div>
+                <div>
+                    <h3>Richard Brown</h3>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><br>
+                    <p>Lorem Ipsum is simply dummy text of the printing and <br>typesetting industry. It has been the industry's standard<br> dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model NotesMarketplace.context.User
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+@using (Html.BeginForm("AddAdmin", "Settings", FormMethod.Post))
+{
+    <section class="admin1">
+        <h1>Add Administrator</h1>
+    </section>
+    <div class="form-group1">
+        <form>
+            <label class="control-label required" for="username">First Name</label><br>
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+
+
+            <label class="control-label required" for="username">Last Name</label><br>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+
+
+            <label class="control-label required" for="username">Email</label><br>
+            @Html.TextBoxFor(x => x.EmailID, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label id="pnumber" for="exampleInputPassword1">Phone Number</label><br>
+            <select id="code" name="code">
+                <option value="91">+91</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+            </select>
+
+
+            @Html.TextBoxFor(x => x.PhoneNo, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+
+            <button type="submit" class="btn btn-secondary">SUBMIT</button>
+
+        </form>
+    </div>
+}

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NotesMarketplace.context.APublishedModel>
+@{
+    ViewBag.Title = "ARejected";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+            <h1 style="margin-top: 100px;">Rejected Notes</h1>
+            <p>Seller</p>
+            <div class="search-flex">
+                <div class="add-admin-btn">
+                    <select id="seller" name="Seller">
+                        <option value="khayati">Rahul Shah</option>
+                        <option value="name1">name1</option>
+                        <option value="name2">name2</option>
+                        <option value="name3">name3</option>
+                    </select>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+            <li><a href="../Signup/Signup">Item 1</a></li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="98%" id="myTable">
+        <tr class="line">
+            <th>SR NO.</th>
+            <th>NOTE TITLE</th>
+            <th>CATEGORY</th>
+            <th>SELLER</th>
+            <th></th>
+            <th>DATE ADDED</th>
+            <th>REJECTED BY</th>
+            <th>REMARK</th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.sellernote.ID</td>
+                    <td>@item.sellernote.Title</td>
+                    <td>@item.notecategory.Name</td>
+                    <td>@item.user.FullName</td>
+                    <td><img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png" /></td>
+                    <td>@item.sellernote.CreatedDate</td>
+                    <td>@item.auser.FullName</td>
+                    <td>@item.sellernote.AdminRemarks</td>
+                    <td class="context-menu" data-container-id="context-menu-items" data-row-id="1"></td>
+                    <td class="context-menu" data-container-id="context-menu-items" data-row-id="@item.sellernote.ID"></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

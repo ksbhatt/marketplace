@@ -134,6 +134,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="context\ADownloadedModel.cs" />
+    <Compile Include="context\APublishedModel.cs" />
+    <Compile Include="context\ConfigurationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ConfigurationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ConfigurationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="context\ContactUsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +169,40 @@
     <Compile Include="context\contact_us.cs">
       <DependentUpon>ContactUsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="context\Country.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Country.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Country.cs">
+      <DependentUpon>Country.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Country.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Country.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\Country1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Country.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CountryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CountryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\CountryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountryModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\DashboardModel.cs" />
     <Compile Include="context\DB_Entities.cs" />
     <Compile Include="context\Download.Context.cs">
       <AutoGen>True</AutoGen>
@@ -159,7 +210,7 @@
       <DependentUpon>Download.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="context\Download.cs">
-      <DependentUpon>Download.tt</DependentUpon>
+      <DependentUpon>ReportModel.tt</DependentUpon>
     </Compile>
     <Compile Include="context\Download.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -171,24 +222,79 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Download.tt</DependentUpon>
     </Compile>
-    <Compile Include="context\DownloadsModel.Context.cs">
+    <Compile Include="context\DownloadModel.cs" />
+    <Compile Include="context\NoteCategory.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DownloadsModel.Context.tt</DependentUpon>
+      <DependentUpon>NoteCategory.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="context\DownloadsModel.cs">
+    <Compile Include="context\NoteCategory.cs">
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\NoteCategory.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DownloadsModel.tt</DependentUpon>
+      <DependentUpon>NoteCategory.edmx</DependentUpon>
     </Compile>
-    <Compile Include="context\DownloadsModel.Designer.cs">
+    <Compile Include="context\NoteCategory1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DownloadsModel.edmx</DependentUpon>
+      <DependentUpon>NoteCategory.tt</DependentUpon>
     </Compile>
+    <Compile Include="context\NoteType.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteType.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\NoteType.cs">
+      <DependentUpon>NoteType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\NoteType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteType.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\NoteType1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteType.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\PublishedModel.cs" />
+    <Compile Include="context\RejectedModel.cs" />
+    <Compile Include="context\Report.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\ReportModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ReportModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\ReportModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\RequestModel.cs" />
     <Compile Include="context\ResetPasswordModel.cs" />
     <Compile Include="context\SellerNote.cs">
-      <DependentUpon>SellerNotes.tt</DependentUpon>
+      <DependentUpon>ReportModel.tt</DependentUpon>
     </Compile>
     <Compile Include="context\SellerNotes.Context.cs">
       <AutoGen>True</AutoGen>
@@ -220,8 +326,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SellerNotesModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="context\SellerNotesReportedIssue.cs">
+      <DependentUpon>ReportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SystemConfiguration.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemConfiguration.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SystemConfiguration.cs">
+      <DependentUpon>ConfigurationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="context\SystemConfiguration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemConfiguration.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="context\SystemConfiguration1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemConfiguration.tt</DependentUpon>
+    </Compile>
     <Compile Include="context\User.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
+      <DependentUpon>ReportModel.tt</DependentUpon>
     </Compile>
     <Compile Include="context\UserModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -256,11 +383,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserProfileModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="context\ViewModel.cs" />
+    <Compile Include="Controllers\AdminSignupController.cs" />
+    <Compile Include="Controllers\ADownloadedController.cs" />
+    <Compile Include="Controllers\APublishedNotesController.cs" />
+    <Compile Include="Controllers\ARejectedController.cs" />
+    <Compile Include="Controllers\BuyerRequestController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberDetailsController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Controllers\NotesUnderReviewController.cs" />
+    <Compile Include="Controllers\RejectedController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
+    <Compile Include="Controllers\SoldNotesController.cs" />
+    <Compile Include="Controllers\SystemConfigurationController.cs" />
+    <Compile Include="Controllers\UserDashboardController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -273,6 +415,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="context\ConfigurationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ConfigurationModel.edmx</DependentUpon>
+      <LastGenOutput>ConfigurationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\ConfigurationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ConfigurationModel.edmx</DependentUpon>
+      <LastGenOutput>ConfigurationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="context\ContactUsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ContactUsModel.edmx</DependentUpon>
@@ -282,6 +434,26 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ContactUsModel.edmx</DependentUpon>
       <LastGenOutput>ContactUsModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\Country.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Country.edmx</DependentUpon>
+      <LastGenOutput>Country.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\Country.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Country.edmx</DependentUpon>
+      <LastGenOutput>Country1.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\CountryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CountryModel.edmx</DependentUpon>
+      <LastGenOutput>CountryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\CountryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CountryModel.edmx</DependentUpon>
+      <LastGenOutput>CountryModel.cs</LastGenOutput>
     </Content>
     <Content Include="context\Download.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -293,15 +465,45 @@
       <DependentUpon>Download.edmx</DependentUpon>
       <LastGenOutput>Download1.cs</LastGenOutput>
     </Content>
-    <Content Include="context\DownloadsModel.Context.tt">
+    <Content Include="context\NoteCategory.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DownloadsModel.edmx</DependentUpon>
-      <LastGenOutput>DownloadsModel.Context.cs</LastGenOutput>
+      <DependentUpon>NoteCategory.edmx</DependentUpon>
+      <LastGenOutput>NoteCategory.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="context\DownloadsModel.tt">
+    <Content Include="context\NoteCategory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DownloadsModel.edmx</DependentUpon>
-      <LastGenOutput>DownloadsModel.cs</LastGenOutput>
+      <DependentUpon>NoteCategory.edmx</DependentUpon>
+      <LastGenOutput>NoteCategory1.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\NoteType.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NoteType.edmx</DependentUpon>
+      <LastGenOutput>NoteType.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\NoteType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NoteType.edmx</DependentUpon>
+      <LastGenOutput>NoteType1.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\Report.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Report.edmx</DependentUpon>
+      <LastGenOutput>Report.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\Report.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Report.edmx</DependentUpon>
+      <LastGenOutput>Report.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\ReportModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+      <LastGenOutput>ReportModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\ReportModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+      <LastGenOutput>ReportModel.cs</LastGenOutput>
     </Content>
     <Content Include="context\SellerNotes.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -322,6 +524,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SellerNotesModel.edmx</DependentUpon>
       <LastGenOutput>SellerNotesModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\SystemConfiguration.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemConfiguration.edmx</DependentUpon>
+      <LastGenOutput>SystemConfiguration.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="context\SystemConfiguration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemConfiguration.edmx</DependentUpon>
+      <LastGenOutput>SystemConfiguration1.cs</LastGenOutput>
     </Content>
     <Content Include="context\UserModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -384,19 +596,68 @@
     <Content Include="context\SellerNotes.edmx.diagram">
       <DependentUpon>SellerNotes.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="context\DownloadsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DownloadsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="context\DownloadsModel.edmx.diagram">
-      <DependentUpon>DownloadsModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="context\Download.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Download.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="context\Download.edmx.diagram">
       <DependentUpon>Download.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\SystemConfiguration.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SystemConfiguration.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\SystemConfiguration.edmx.diagram">
+      <DependentUpon>SystemConfiguration.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\ConfigurationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ConfigurationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\ConfigurationModel.edmx.diagram">
+      <DependentUpon>ConfigurationModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\NoteCategory.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NoteCategory.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\NoteCategory.edmx.diagram">
+      <DependentUpon>NoteCategory.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\NoteType.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NoteType.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\NoteType.edmx.diagram">
+      <DependentUpon>NoteType.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\CountryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CountryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\CountryModel.edmx.diagram">
+      <DependentUpon>CountryModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\Country.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Country.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\Country.edmx.diagram">
+      <DependentUpon>Country.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\Report.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Report.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\Report.edmx.diagram">
+      <DependentUpon>Report.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="context\ReportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="context\ReportModel.edmx.diagram">
+      <DependentUpon>ReportModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -437,6 +698,32 @@
     <Content Include="Views\Notes\Notes.cshtml" />
     <Content Include="Views\Download\DownloadedNotes.cshtml" />
     <Content Include="Views\Shared\_mytemplate1.cshtml" />
+    <Content Include="Views\Shared\_mytemplate2%28admin%29.cshtml" />
+    <Content Include="Views\UserProfile\MyProfile.cshtml" />
+    <Content Include="Views\SystemConfiguration\Configuration.cshtml" />
+    <Content Include="Views\Settings\Category.cshtml" />
+    <Content Include="Views\Settings\ManageCategory.cshtml" />
+    <Content Include="Views\Settings\Type.cshtml" />
+    <Content Include="Views\Settings\ManageType.cshtml" />
+    <Content Include="Views\Settings\Country.cshtml" />
+    <Content Include="Views\Settings\ManageCountry.cshtml" />
+    <Content Include="Views\Settings\Admin.cshtml" />
+    <Content Include="Views\Settings\ManageAdmin.cshtml" />
+    <Content Include="Views\Report\Report.cshtml" />
+    <Content Include="Views\BuyerRequest\Request.cshtml" />
+    <Content Include="Views\SoldNotes\SoldNotes.cshtml" />
+    <Content Include="Views\Rejected\RejectedNotes.cshtml" />
+    <Content Include="Views\APublishedNotes\APublishedNotes.cshtml" />
+    <Content Include="Views\NotesUnderReview\UnderReview.cshtml" />
+    <Content Include="Views\ADownloaded\ADownloaded.cshtml" />
+    <Content Include="Views\Members\Members.cshtml" />
+    <Content Include="Views\ARejected\ARejected.cshtml" />
+    <Content Include="Views\Shared\_mytemplate3.cshtml" />
+    <Content Include="Views\Signup\NoteDetails.cshtml" />
+    <Content Include="Views\AdminSignup\AdminSignup.cshtml" />
+    <Content Include="Views\MemberDetails\MemberDetails.cshtml" />
+    <Content Include="Views\Shared\_mytemplate4.cshtml" />
+    <Content Include="Views\UserDashboard\UserDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -444,6 +731,7 @@
     <Folder Include="Image\" />
     <Folder Include="Models\" />
     <Folder Include="PDFs\" />
+    <Folder Include="Views\NotesDetails\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

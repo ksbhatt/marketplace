@@ -10,7 +10,7 @@
         <h2>Download Free/Paid Notes<br>or Sale your Book</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Qui nostrum ad nesciunt,<br> at, architecto sint est aperiam maiores dolores!</p>
         <div class="box1">
-            <button type="button" class="sec"><a href="faq_page.html" style="color: white;text-decoration: none">LEARN MORE</a></button>
+            <button type="button" class="sec"><a href="../Home/FAQ" style="color: white;text-decoration: none">LEARN MORE</a></button>
         </div>
     </section>
 
@@ -38,7 +38,7 @@
 
                 <h1>Download free/paid notes</h1>
                 <h4>Get material for your <br> &emsp;&emsp;Cource etc.</h4>
-                <button type="button" text="DOWNLOAD"><a href="search.html" style="color: white;text-decoration: none">DOWNLOAD</a></button>
+                <button type="button" text="DOWNLOAD"><a href="../Signup/SearchNotes" style="color: white;text-decoration: none">DOWNLOAD</a></button>
 
             </div>
             <div class="right1">
@@ -46,7 +46,16 @@
 
                 <h1>Seller</h1>
                 <h4>Upload and Download Cource<br> &emsp;&emsp;&emsp;and Materials etc.</h4>
-                <button type="button" text="DOWNLOAD">SELL BOOK</button>
+                @if(Session["ID"]==null)
+                {
+
+                    <button type="button" text="DOWNLOAD"><a href="../Signup/Signup" style="color: white;text-decoration: none">SELL BOOK</a></button>
+                }
+                else
+                {
+                    <button type="button" text="DOWNLOAD"><a href="../Signup/Dashboard" style="color: white;text-decoration: none">SELL BOOK</a></button>
+
+                }
             </div>
 
         </div>
@@ -118,14 +127,7 @@
 
     </section>
 
-    @if (Session["id"] != null)
-    {
-        <h1>Registered</h1>
-    }
-    else
-    {
-        <h1>NonRegistered</h1>
-    }
+   
 
     <hr>
    

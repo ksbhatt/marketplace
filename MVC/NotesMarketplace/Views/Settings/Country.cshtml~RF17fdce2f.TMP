@@ -1,0 +1,26 @@
+﻿@model NotesMarketplace.context.Country
+
+@{
+    ViewBag.Title = "Country";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+@using (Html.BeginForm("AddCountry", "Settings", FormMethod.Post))
+{
+    <section class="admin1">
+        <h1>Add Country</h1>
+    </section>
+    <div class="form-group1">
+        <form>
+
+            <label class="control-label required" for="country">Country Name</label><br>
+            <input type="text" id="country" name="data[username]" required="required" class="form-control" placeholder="India">
+
+            <label class="control-label required" for="code">Country Code</label><br>
+            <input type="country" id="countrycode" name="data[username]" required="required" class="form-control" placeholder="Enter country code">
+
+            <button type="submit" class="btn btn-secondary">SUBMIT</button>
+
+        </form>
+    </div>
+}

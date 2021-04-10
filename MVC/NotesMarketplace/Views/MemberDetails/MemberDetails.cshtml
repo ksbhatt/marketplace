@@ -1,0 +1,78 @@
+﻿@model NotesMarketplace.context.UserProfile
+@{
+    ViewBag.Title = "MemberDetails";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+@{
+    var data = ViewBag.Message;
+}
+<h1 class="main-header">Member Details</h1>
+<div class="top-section" style="grid-column-gap:0px">
+    <div class="item-1">
+        <div>
+            <img src="images/avatar.png" style="width: 25%;height: 25%;">
+            <table class="secondary">
+                <tr>
+                    <td>First Name:</td>
+                    <td>Richard</td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td>Brown</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>richardbrown77@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>DOB:</td>
+                    <td>@data.DOB</td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td>@data.PhoneNumber</td>
+                </tr>
+                <tr>
+                    <td>College/University:</td>
+                    <td>@data.College,@data.University</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+    <div class="vl">
+
+        <div class="item-2">
+            <table>
+                <tr>
+                    <td>Address 1:</td>
+                    <td>@data.AddressLine1</td>
+                </tr>
+                <tr>
+                    <td>Address 2:</td>
+                    <td>@data.AddressLine2</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>@data.City</td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td>@data.State</td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td>@data.Country</td>
+                </tr>
+                <tr>
+                    <td>Zip Code:</td>
+                    <td>@data.Zipcode</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+

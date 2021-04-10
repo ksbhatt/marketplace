@@ -1,0 +1,82 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--<title>Sticky Header</title>-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/bootstrap/6.1%20bootstrap.min.css">
+
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/main1.css">
+</head>
+
+<body class="page1">
+
+    <div class="wrapper" id="wrapper">
+        <div class="logo-wrapper">
+            <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/top-logo.png" id="imgid">
+
+        </div>
+        <div class="sec-8">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="icon8"></i>
+                <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+            </a>
+        </div>
+        <div class="navigation-wrapper" id="navigation">
+            <a href="../Signup/SearchNotes">Search Notes</a>
+            <a href="../UserDashboard/UserDashboard">Sell Your Notes</a>
+            <a href="../Home/FAQ">FAQ</a>
+            <a href="../ContactUs/ContactUs">Contact Us</a>
+            
+            @if (Session["ID"] != null)
+            {
+                <a href="@Url.Action("Logout","Signup")"><button type="button" style="width: 85px;margin-top:5px;margin-left: 30px;color:white;background-color:#6255a5">Logout</button></a>
+            }
+            else
+            {
+                <a href="../Signup/Login"><button type="button" style="width: 85px;margin-top:5px;margin-left: 30px;color:white;background-color:#6255a5">Login</button></a>
+
+            }
+        </div>
+
+    </div>
+
+    @RenderBody()
+
+    <div class="footer">
+        <p>Copyright <i class="far fa-copyright"></i>TatvaSoft All rights reserved.</p>
+        <div>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Custom JS -->
+
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/script.js"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/nav.js"></script>
+</body>
+
+</html>

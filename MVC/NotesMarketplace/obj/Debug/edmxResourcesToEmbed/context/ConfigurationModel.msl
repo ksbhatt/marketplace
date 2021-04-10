@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model8StoreContainer" CdmEntityContainer="Sample_1Entities15">
+    <EntitySetMapping Name="SystemConfigurations">
+      <EntityTypeMapping TypeName="Model8.SystemConfiguration">
+        <MappingFragment StoreEntitySet="SystemConfigurations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupportEmailAddress" ColumnName="SupportEmailAddress" />
+          <ScalarProperty Name="SupportPhoneNumber" ColumnName="SupportPhoneNumber" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FacebookURL" ColumnName="FacebookURL" />
+          <ScalarProperty Name="TwitterURL" ColumnName="TwitterURL" />
+          <ScalarProperty Name="LinkedInURL" ColumnName="LinkedInURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

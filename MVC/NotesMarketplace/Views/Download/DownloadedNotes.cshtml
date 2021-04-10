@@ -1,10 +1,13 @@
-﻿@model List<NotesMarketplace.context.Download>
+﻿@model IEnumerable<NotesMarketplace.context.DownloadModel>
 
 @{
     ViewBag.Title = "DownloadedNotes";
     Layout = "~/Views/Shared/_mytemplate1.cshtml";
 }
 
+@{
+    var data = ViewBag.Message;
+}
 
 <main>
     <section class="first-section"></section>
@@ -35,56 +38,44 @@
         </div>
 </section>
 
-<table class="table table-hover" id="myTable">
-    <tr>
-        <th>SR.NO.</th>
-        <th>NOTE TITLE</th>
-        <th>CATEGORY</th>
-        <th>BUYER</th>
-        <!--<th>SecondaryEmailAddress</th>
-        <th>CountryCode</th>-->
-        <th>SELL TYPE</th>
-        <th>PRICE</th>
-        <th>DOWNLOADED DATE/TIME</th>
-    </tr>
-   
-        @foreach (var item in Model)
-        {
-          
-             <tr>
-        <td>@item.Number</td>
-        <td>@item.NoteTitle</td>
-        <td>@item.NoteCategory</td>
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+            <li>@Html.ActionLink("Download", "DownloadFile", new { @class = "classname", fileName = "" })Download Note</li>
+            <li>Add Reviews/Feedback</li>
+            <li>Report as anappropriate</li>
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="98%" id="myTable">
+        <tr class="line">
+            <th>SR NO.</th>
+            <th>NOTE TITLE</th>
+            <th>CATEGORY</th>
+            <th>BUYER</th>
+            <th>SELL TYPE</th>
+            <th>PRICE</th>
+            <th>DOWNLOADED DATE/TIME</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.download.ID</td>
+                    <td>@item.download.NoteTitle</td>
+                    <td>@item.download.NoteCategory</td>
+                    <td>@item.user.EmailID</td>
+                    <td>@item.download.IsPaid</td>
+                    <td>@item.download.PurchasedPrice</td>
+                    <td>@item.download.CreatedDate</td>
+                    <td class="context-menu" data-container-id="context-menu-items" data-row-id="@item.download.NoteID "></td>
+                    <!--<td><a href="@Url.Action("Delete",new {item.download.ID })"><i class="fa fa-trash" aria-hidden="true" style="font-size: 25px;color: #d1d1d1;padding-left: 15px"></i></a></td>-->
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
-        <td>@item.Email</td>
-        <td>@item.SellType</td>
-        <td>$@item.PurchasedPrice</td>
-        <td>@item.AttachmentDownloadedDate</td>
-        <td><img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png"></td>
-        <td class="more">
-            <button id="more-btn" class="more-btn">
-                <span class="more-dot"></span><br>
-                <span class="more-dot"></span><br>
-                <span class="more-dot"></span>
-            </button>
-            <div class="more-menu">
-                <ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
-                    <li class="more-menu-item" role="presentation">
-                        <button type="button" class="more-menu-btn" role="menuitem">Download Note</button>
-                    </li>
-                    <li class="more-menu-item" role="presentation">
-                        <button type="button" class="more-menu-btn" role="menuitem" onclick="clicked()">Add Reviews/Feedback</button>
-                    </li>
-                    <li class="more-menu-item" role="presentation">
-                        <button type="button" class="more-menu-btn" role="menuitem">Report as inappropriate</button>
-                    </li>
-                </ul>
-            </div>
-        </td>
-    </tr>
-
-        }
-
-</table>
 
 

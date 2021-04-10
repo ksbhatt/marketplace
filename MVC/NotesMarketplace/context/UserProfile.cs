@@ -15,6 +15,7 @@ namespace NotesMarketplace.context
 
     public partial class UserProfile
     {
+        
         public int ID { get; set; }
         public int UserID { get; set; }
         public Nullable<DateTime> DOB { get; set; }
@@ -35,5 +36,11 @@ namespace NotesMarketplace.context
 
         public string ProfilePicture { get; set; }
         public HttpPostedFileBase ImageFile { get; set; }
+        
+        public string CountryCode { get; set; }
+
+        public string SecondaryEmailAddress { get; set; }
+
+
     }
 }

@@ -2,9 +2,8 @@
 
 @{
     ViewBag.Title = "Login";
+
 }
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,13 +17,13 @@
     <title>MARKETPLACE</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/favicon.ico">
+    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/favicon.ico">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/bootstrap/6.1%20bootstrap.min.css">
+    <link rel="stylesheet" href=@Url.Content("~/Content/mytemplate/") Marketplace /front/css/bootstrap/bootstrap.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -32,7 +31,9 @@
     <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/main.css">
 </head>
 
-<body style="background: url('@Url.Content("~/Content/mytemplate/")Marketplace/front/images/banner-with-overlay.jpg') no-repeat center ">
+<body class="aindex-css" style="background: url('@Url.Content("~/Content/mytemplate/")Marketplace/front/images/banner-with-overlay.jpg')">
+
+
 
 
 
@@ -42,7 +43,7 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-            <form class="container">
+         
                 <div class="heading">
                     <h1>Login</h1>
                     <h5>Enter your email address and password to login</h5>
@@ -70,26 +71,26 @@
                 </div>
                 <button type="submit" class="btn btn-primary" style=" margin-left: 8%">LOGIN</button>
 
-            </form>
+           
         }
-        <div>
-            <p style="padding-left: 25%;padding-top: 2%">Dont'have an account?</p>@Html.ActionLink("SignUp", "Signup", "User", new { style = "padding-left: 55%;" })
-        </div>
-
-
+    <div>
+        <p style="padding-left: 25%;padding-top: 2%">Dont'have an account?</p>@Html.ActionLink("SignUp", "Signup", "User", new { style = "padding-left: 55%;" })
     </div>
-    <!-- Jquery -->
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
     <!-- Bootstrap JS -->
-    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/bootstrap/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/admin/js/bootstrap/bootstrap.js"></script>
 
     <!-- Custom JS -->
     <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/script.js"></script>
 
+
 </body>
 
 </html>
+
+
 
 

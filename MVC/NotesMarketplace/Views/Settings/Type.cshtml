@@ -1,0 +1,32 @@
+﻿@model NotesMarketplace.context.NoteType
+
+
+
+@{
+    ViewBag.Title = "Type";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+
+}
+
+@using (Html.BeginForm("AddType", "Settings", FormMethod.Post))
+{
+    <section class="admin1">
+        <h1>Add Type</h1>
+    </section>
+    <div class="form-group1">
+
+        <form>
+
+            <label class="control-label required" for="type">Type</label><br>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @style = "margin-left: 20px;" })
+            <!--<input type="text" id="type" name="data[username]" required="required" class="form-control">-->
+
+            <label class="control-label required" for="desc">Description</label><br>
+            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @cols = "50", @rows = "12", @style = "margin-left: 20px;" })
+            <!-- <textarea class="area" rows="4" cols="50"></textarea><br>-->
+
+            <button type="submit" class="btn btn-secondary">SUBMIT</button>
+
+        </form>
+    </div>
+}

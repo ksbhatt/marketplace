@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NotesMarketplace.context.PublishedModel>
+
+@{
+    ViewBag.Title = "UnderReview";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+            <h1 style="margin-top: 100px;">Notes Under Review</h1>
+            <p>Seller</p>
+            <div class="search-flex">
+                <div class="add-admin-btn">
+                    <select id="associateStatusDropdown">
+                        <option value="All">Select</option>
+                        <option value="KhyatiPatel">KhyatiPatel</option>
+                        <option value="RahulShah">RahulShah</option>
+                        
+                    </select>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+            <li>View More Details</li>
+            <li>Download Notes</li>
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="98%" id="myTable">
+        <tr class="line">
+            <th>SR NO.</th>
+            <th>NOTE TITLE</th>
+            <th>CATEGORY</th>
+            <th>SELLER</th>
+            <th></th>
+            <th>DATE EDITED</th>
+            <th>STATUS</th>
+            <th>&emsp;ACTION</th>
+            <th></th>
+        </tr>
+        <tbody id="download-forms-table-tbody">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.sellernote.ID</td>
+                    <td>@item.sellernote.Title</td>
+                    <td>@item.notecategory.Name</td>
+                    <td>@item.user.FullName</td>
+
+                    <td><img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/eye.png" /></td>
+                    <td>@item.sellernote.CreatedDate</td>
+                    <!--Status-->
+                    <td class="buttons"><button type="button" style="background-color: #28a745">Approve</button><button type="button" style="background-color:#ff3636">Reject</button><button type="button" style="background-color: #cccccc">InReview</button></td>
+                    <td class="context-menu" data-container-id="context-menu-items" data-row-id="1"></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

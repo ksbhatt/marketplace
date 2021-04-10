@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- important meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>MARKETPLACE</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/admin/css/bootstrap/6.1%20bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--custom CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/mytemplate/")Marketplace/front/css/main.css">
+</head>
+
+<body
+
+      <style>
+          .master-menu-right-wrapper {
+              float: right;
+              width: auto;
+              text-align: right;
+              cursor: pointer;
+              user-select: none;
+          }
+
+          .master-menu-right-item {
+              display: inline-block;
+              padding-top: 4px;
+              height: 48px;
+              font-size: 1.6rem;
+              text-align: center;
+          }
+
+
+          .master-menu-right-user-font {
+              display: inline-block;
+              font-size: 1rem;
+          }
+
+          .master-menu-right-user {
+              margin-top: -10px;
+              padding-left: 10px;
+              border-left: thin solid #041348;
+          }
+      </style>
+
+    <header>
+        <div class="wrapper scroll-2" id="wrapper-2">
+            <div class="logo-wrapper">
+                <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/logo.png" id="imgid">
+
+            </div>
+            <div class="sec-8">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars" id="icon8"></i>
+                    <i class="fa fa-window-close" id="icon9" style="display: none"></i>
+                </a>
+            </div>
+            <div class="navigation-wrapper sc-2" id="navigation">
+                <a href="../Signup/Dashboard">Dashboard</a>
+                <a href="#">Notes</a>
+                <a href="#">Members</a>
+                <div class="dropdown">
+                    <a href="#" onclick="myFunction()" class="dropbtn">Reports</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#" style="color: black; padding-top: 10px;">Spam Reports</a>
+                    </div>
+                </div>
+
+                <div class="master-menu-right-wrapper">
+                    
+                    <div class="btn-group">
+                        <div class="master-menu-right-item" id="add-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</div>
+                        <div class="dropdown-menu master-menu-dropdown" aria-labelledby="add-menu">
+                            <a class="dropdown-item" href="../Settings/ManageAdmin">New member</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../Settings/ManageType">New admin</a>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="btn-group">
+                       
+                        <div class="master-menu-right-item" id="app-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</div>
+                        <div class="dropdown-menu master-menu-dropdown" aria-labelledby="app-menu">
+                            <label>Welcome</label>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../Settings/ManageCountry">App 1</a>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary mr-5">Save</button>
+                                <button type="button" class="btn btn-dark">Edit profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="dropdown">
+                    <a href="#" onclick="myFunction1()" class="dropbtn">Settings</a>
+                    <div id="myDropdown1" class="dropdown-content">
+                        <a href="../SystemConfiguration/Configuration" style="color: black; padding-top: 10px;">Manage System Configuration</a>
+                        <a href="../Settings/ManageAdmin" style="color: black;padding-top: 10px;">Manage Administrator</a>
+                        <a href="../Settings/ManageCategory" style="color: black; padding-top: 10px;">Manage Category</a>
+                        <a href="../Settings/ManageType" style="color: black;padding-top: 10px;">Manage Type</a>
+                        <a href="../Settings/ManageCountry" style="color: black; padding-top: 10px;">Manage Countries</a>
+                    </div>
+                </div>
+                @if (Session["ID"] != null)
+                {
+                    <div class="dropdown">
+                        <img src="@Url.Content("~/Content/mytemplate/")Marketplace/front/images/customer-1.png" onclick="myFunction()" class="dropbtn" style="height: 75px;width: 75px;margin-top: 5px;margin-left: 2px">
+
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="../UserProfile/MyProfile" style="color: black; padding-top: 10px;">Update Profile</a>
+                            <a href="../Signup/ResetPassword" style="color: black;padding-top: 10px;">Change Password</a>
+                            <a href="@Url.Action("Logout", "Signup")" style="color: #6255a5;padding-top: 10px;">LOGOUT</a>
+                        </div>
+                    </div>
+                }-->
+                @if (Session["ID"] != null)
+                {
+                    <a href="@Url.Action("Logout","Signup")"><button type="button" style="width: 85px;margin-top:5px;margin-left: 30px;color:white;background-color:#6255a5">Logout</button></a>
+                }
+                else
+                {
+                    <a href="../Signup/Login"><button type="button" style="width: 85px;margin-top:5px;margin-left: 30px;color:white;background-color:#6255a5">Login</button></a>
+
+                }
+            </div>
+
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <hr class="footer-hr">
+    <!--Footer-->
+    <div id="footer">
+        <p class="copyright">Version: 1.1.24</p>
+        <p class="social">Copyright &copy; Tatvasoft All rights reserved.</p>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/script.js"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")Marketplace/front/js/nav.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("#myInput").on("keyup", function () {
+                var input, filter, table, tr, td, cell, i, j;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 1; i < tr.length; i++) {
+                    // Hide the row initially.
+                    tr[i].style.display = "none";
+
+                    td = tr[i].getElementsByTagName("td");
+                    for (var j = 0; j < td.length; j++) {
+                        cell = tr[i].getElementsByTagName("td")[j];
+                        if (cell) {
+                            if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                                break;
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+
+</body>
+
+</html>

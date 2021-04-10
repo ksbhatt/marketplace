@@ -1,0 +1,44 @@
+﻿@model NotesMarketplace.context.SystemConfiguration
+@{
+    ViewBag.Title = "Configuration";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+@using (Html.BeginForm("AddConfiguration", "SystemConfiguration", FormMethod.Post))
+{
+
+    <section class="admin1" style="margin-top:60px;">
+        <h1>Manage System Configuration</h1>
+    </section>
+
+
+    <div class="form-group1">
+
+
+        <form>
+
+            <label class="control-label required" for="mail">Support emails address</label><br>
+            @Html.TextBoxFor(x => x.SupportEmailAddress, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label class="control-label required" for="phone">Support phone number</label><br>
+            @Html.TextBoxFor(x => x.SupportPhoneNumber, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label class="control-label required" for="mail">Email Address(es) (for various events system will send notifications to the users) </label><br>
+            @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label for="url">Facebook URL</label><br>
+            @Html.TextBoxFor(x => x.FacebookURL, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label for="url">Twitter URL</label><br>
+            @Html.TextBoxFor(x => x.TwitterURL, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+            <label for="url">Linkedin URL</label><br>
+            @Html.TextBoxFor(x => x.LinkedInURL, new { @class = "form-control", @style = "margin-left: 20px;" })
+
+
+
+            <button type="submit" class="btn btn-secondary">SUBMIT</button>
+        </form>
+        
+    </div>
+}

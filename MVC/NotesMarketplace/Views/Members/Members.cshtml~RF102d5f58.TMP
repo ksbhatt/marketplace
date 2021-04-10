@@ -1,0 +1,62 @@
+﻿@model List<NotesMarketplace.context.User>
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/_mytemplate2(admin).cshtml";
+}
+
+<section class="admin">
+    <div class="content-box-md">
+        <div class="container1">
+
+            <div class="search-flex" style="margin-top: 60px;">
+                <div>
+                    <h1>Members</h1>
+                </div>
+                <div class="flex-search-buttons">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="search" name="search" placeholder="&emsp;&emsp;Search" style="background-image: url('../admin/images/search.jpg');
+                              background-position: 10px 10px; background-repeat: no-repeat">
+
+                    <button type="button">SEARCH</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div style="overflow-x: auto;">
+    <div class="context-menu-container" id="context-menu-items">
+        <ul>
+
+            <li>View More Details</li>
+            <li>Deactivate</li>
+        </ul>
+    </div>
+    <table class="main-table" border="1" width="96%" id="myTable">
+        <tr class="line">
+            <th>SR NO.</th>
+            <th style="width: 150px">FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>EMAIL</th>
+            <th>JOINING DATE</th>
+            <th>UNDER REVIEW<br>&emsp;&emsp;NOTES</th>
+            <th>PUBLISHED<br>&emsp;NOTES</th>
+            <th>DOWNLOADED<br>&emsp;&emsp;NOTES</th>
+            <th>&emsp;TOTAL<br>EXPENSES</th>
+            <th>&emsp;TOTAL<br>EARNINGS</th>
+            <th></th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.EmailID</td>
+                <td>@item.CreatedDate</td>
+                <td class="context-menu" data-container-id="context-menu-items" data-row-id="1"></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
